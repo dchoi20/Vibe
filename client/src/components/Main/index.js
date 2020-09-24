@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+import "./style.css";
 
 export default function Main() {
   const [imagesState, setImagesState] = useState({
@@ -8,20 +9,19 @@ export default function Main() {
 
   useEffect(() => {
     API.getImages().then((res) => {
-      console.log(res);
+      console.log(res.data);
       setImagesState({
         ...imagesState,
-        images: res.data.results,
+        images: res.data,
       });
     });
   }, []);
 
   return (
-    <div>
-      {/* {imagesState.images.map(image => {
-        <img src={image.urls.full} alt={image.alt_description}/>
-      })} */}
-      <h1>hi</h1>
+    <div id="imageContainer">
+      {imagesState.images.map((image) => (
+        <img src={image.urls.small} alt={image.id} />
+      ))}
     </div>
   );
 }
