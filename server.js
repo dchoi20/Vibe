@@ -1,11 +1,11 @@
 const express = require("express");
 const Axios = require("axios");
-require("./db/db");
 const userRouter = require("./routers/user");
 
 const mongoose = require("mongoose");
 // const routes = require("./routes");
 require("dotenv").config();
+require("./db/db");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -29,10 +29,8 @@ app.get("/images", (req, res) => {
   });
 });
 
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
-);
+
+
 
 // Start the API server
 app.listen(PORT, function () {
