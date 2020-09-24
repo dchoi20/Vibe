@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.5.2",
+    "dotenv": "^8.2.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
