@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start" : "env-cmd -f ./.env nodemon src/app.js",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -22,14 +20,8 @@
     "nodemon": "^1.19.4"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "^0.18.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
-=======
     "axios": "^0.18.0",
+    "dotenv": "^8.2.0",
     "bcryptjs": "^2.4.3",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
@@ -39,6 +31,5 @@
     "mongoose": "^5.10.6",
     "validator": "^13.1.17",
     "yarn": "^1.22.5"
->>>>>>> master
   }
 }
