@@ -18,7 +18,10 @@ export default function Main() {
 
   return (
     <div>
-      <img></img>
+      {/* {imagesState.images.map(image => {
+        <img src={image.urls.full} alt={image.alt_description}/>
+      })} */}
+      <h1>hi</h1>
     </div>
   );
 }
