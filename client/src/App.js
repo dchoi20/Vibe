@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route , Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/index";
 import LoginForm from "./components/LoginForm";
@@ -11,8 +11,9 @@ export default function App() {
       <div>
         <Navbar />
         <Route exact path= "/login" component={LoginForm}/>
+        <Redirect to="/main" /> : <Main />
         <Route exact path= "/" component={SignUpForm}/>
-        <Route exact path="/main" component={Main} />
+        
       </div>
     </Router>
   );

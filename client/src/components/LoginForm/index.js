@@ -15,11 +15,11 @@ export default function LoginForm() {
     };
     console.log(emailInput)
     console.log(passwordInput)
-    axios.post('users/login', { user }
+    axios.post('users/login', user) 
       .then(res => {
         console.log(res);
         console.log(res.data);
-      }))
+      })
 
   }
 
