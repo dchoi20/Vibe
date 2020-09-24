@@ -1,5 +1,7 @@
 const express = require("express");
 const Axios = require("axios");
+require("./db/db");
+const userRouter = require("./routers/user");
 
 const mongoose = require("mongoose");
 // const routes = require("./routes");
@@ -11,6 +13,7 @@ const { REACT_APP_API_KEY } = process.env;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(userRouter);
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
