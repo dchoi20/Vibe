@@ -1,10 +1,13 @@
 const express = require("express");
+const Axios = require("axios");
 
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
+require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const { REACT_APP_API_KEY } = process.env;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,7 +16,15 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
+
+app.get("/images", (req, res) => {
+  Axios.get(
+    `https://api.unsplash.com/photos/?client_id=${REACT_APP_API_KEY}`
+  ).then(({ data }) => {
+    res.send(data);
+  });
+});
 
 // Connect to the Mongo DB
 mongoose.connect(
