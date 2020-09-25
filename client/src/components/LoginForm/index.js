@@ -3,15 +3,13 @@ import "./style.css";
 import axios from "axios";
 import SignUpForm from "../SignUpForm/index";
 export default function LoginForm() {
-
   const passwordInput = useRef();
   const emailInput = useRef();
   function login(event) {
     event.preventDefault();
     const user = {
-      
       email: emailInput.current.value,
-      password: passwordInput.current.value
+      password: passwordInput.current.value,
     };
    
     console.log(emailInput)
@@ -34,18 +32,30 @@ export default function LoginForm() {
       <form>
         <div className="row">
           <div className="input-field col s12">
-            <input id="email" type="email" className="validate" ref={emailInput} />
+            <input
+              id="email"
+              type="email"
+              className="validate"
+              ref={emailInput}
+            />
             <label for="email">Email</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
-            <input id="password" type="password" className="validate" ref={passwordInput} />
+            <input
+              id="password"
+              type="password"
+              className="validate"
+              ref={passwordInput}
+            />
             <label for="password">Password</label>
           </div>
         </div>
         <button
-          onClick={(event) => { login(event) }}
+          onClick={(event) => {
+            login(event);
+          }}
           class="btn waves-effect waves-light"
           type="submit"
           name="action"

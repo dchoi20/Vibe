@@ -8,6 +8,9 @@ export default function Navbar() {
       <li>
         <Link to="/Home">vibe</Link>
       </li>
+      <li>
+        <Link to="/chatlogin">Chatlogin</Link>
+      </li>
     </ul>
   );
 }
