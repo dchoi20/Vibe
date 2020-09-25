@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on("connection", (socket) => {
-  console.log("new connection");
+  console.log("user entered");
 
   socket.on("disconnect", () => {
     console.log("user left");
