@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./style.css";
 import axios from "axios";
-
+import SignUpForm from "../SignUpForm/index";
 export default function LoginForm() {
 
   const passwordInput = useRef();
@@ -9,17 +9,23 @@ export default function LoginForm() {
   function login(event) {
     event.preventDefault();
     const user = {
-
+      
       email: emailInput.current.value,
       password: passwordInput.current.value
     };
+   
     console.log(emailInput)
     console.log(passwordInput)
     axios.post('users/login', user) 
       .then(res => {
         console.log(res);
         console.log(res.data);
+        console.log(user)
+        window.location.replace(`/main`)
       })
+      if (!user.email && !user.password) {
+        return
+      }
 
   }
 

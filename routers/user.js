@@ -34,6 +34,10 @@ router.get('/users/me', auth, async(req, res) => {
     // View logged in users
     res.send(req.user)
 })
+router.get('/users', auth, async(req, res) => {
+    // View logged in users
+    res.send(req.user)
+})
 router.post('/users/me/logout', auth, async (req, res) => {
     // Log user out of the application
     try {
