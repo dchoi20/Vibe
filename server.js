@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 
 // SOCKET.IO
-const chatRouter = require("./routers/chat");
 
 const socketio = require("socket.io");
 const http = require("http");
@@ -38,8 +37,7 @@ const { REACT_APP_API_KEY } = process.env;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(userRouter);
-// middleware for socketio.io
-app.use(chatRouter);
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
