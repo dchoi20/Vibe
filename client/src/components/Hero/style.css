@@ -1,0 +1,19 @@
+.hero {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1595859059714-04d1c0c874c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80);
+  background-size: cover;
+  background-position: center;
+}
+
+.heroTwo {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.heroBtn {
+  border-radius: 30px;
+  background-color: #9b5de5;
+}
