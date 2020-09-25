@@ -56,6 +56,12 @@ app.get("/images", (req, res) => {
 });
 
 // Start the API server
+
+// app.listen(PORT, function () {
+//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+// });
+
+// Socket.io server
 server.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
