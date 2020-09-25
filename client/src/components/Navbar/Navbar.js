@@ -4,8 +4,13 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand">Navbar</span>
-    </nav>
+    <ul>
+      <li>
+        <Link to="/Home">vibe</Link>
+      </li>
+      <li>
+        <Link to="/chatlogin">Chatlogin</Link>
+      </li>
+    </ul>
   );
 }
