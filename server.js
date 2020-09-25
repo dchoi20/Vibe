@@ -16,11 +16,17 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on("connection", (socket) => {
-  console.log("user entered");
+  console.log("connection");
+
+  socket.emit("message", "welcome");
+
+  socket.broadcast.emit("message", "user has entered the chat");
 
   socket.on("disconnect", () => {
-    console.log("user left");
+    io.emit("message", "user has left the chat");
   });
+
+  socket.on("chatMessage", (msg) => console.log(msg));
 });
 
 // const routes = require("./routes");

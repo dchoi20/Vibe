@@ -6,11 +6,9 @@ export default function Chatlogin() {
   const [room, setRoom] = useState("");
 
   function Username(e) {
-    console.log(e.target.value);
     setUserName(e.target.value);
   }
   function Room(e) {
-    console.log(e.target.value);
     setRoom(e.target.value);
   }
 
