@@ -24,7 +24,7 @@ export default function SignUpForm() {
   }
   return (
     <div className="container">
-      <form>
+      <form name="#signup">
         <div className="row">
           <div className="input-field col s12">
             <input id="name" type="name" className="validate" ref={nameInput} />
