@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
     io.emit("message", "user has left the chat");
   });
 
-  socket.on("chatMessage", (msg) => console.log(msg));
+  socket.on("chatMessage", (msg) => io.emit("message", msg));
 });
 
 // const routes = require("./routes");
