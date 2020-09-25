@@ -4,10 +4,8 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <ul>
-      <li>
-        <Link to="/Home">vibe</Link>
-      </li>
-    </ul>
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand">Navbar</span>
+    </nav>
   );
 }
