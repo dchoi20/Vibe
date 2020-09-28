@@ -7,7 +7,7 @@ export default function Navbar() {
   function logOut(event) {
     event.preventDefault();
     localStorage.removeItem('token')
-    window.location.replace(`/login`)
+    window.location.replace(`/`)
   }
   return (
     <nav className="black">
