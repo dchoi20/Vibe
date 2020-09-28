@@ -10,14 +10,19 @@ export default function Navbar() {
     window.location.replace(`/login`)
   }
   return (
-    <ul>
-      <li>
-        <Link to="/Home">vibe</Link>
-      </li>
-      <li>
-        <Link to="/chatlogin">Chatlogin</Link>
-      </li>
-      <li>
+    <nav className="black">
+      <div className="nav-wrapper">
+        <a href="#" className="brand-logo center">
+          Vibe
+        </a>
+        <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <li>
+            <a href="#signupForm">Sign Up</a>
+          </li>
+          <li>
+            <a href="#loginForm">Login</a>
+          </li>
+     <li>
       <button
           onClick={(event) => {
             logOut(event);
@@ -29,6 +34,9 @@ export default function Navbar() {
           Log out
         </button>
       </li>
-    </ul>
+        </ul>
+      </div>
+    </nav>
+
   );
 }
