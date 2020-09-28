@@ -18,12 +18,17 @@ export default function Main() {
   }, []);
 
   return (
+
+
+    
     <div>
       <div>
         {imagesState.images.map((image) => (
           <img src={image.urls.small} alt={image.id} />
         ))}
       </div>
+      
+      
     </div>
   );
 }
