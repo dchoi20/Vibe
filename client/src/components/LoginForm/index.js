@@ -18,16 +18,22 @@ export default function LoginForm() {
       .then(res => {
         console.log(res);
         console.log(res.data);
-        console.log(user)
-        window.location.replace(`/main`)
+        console.log(res.data.token);
+        localStorage.token = res.data.token;
+        console.log(user);
+
+        window.location.replace(`/home`)
       })
       if (!user.email && !user.password) {
         return
       }
-
-  }
-
-  return (
+      
+      if (!user ) {
+        return window.location.replace("/users/login")
+      }
+    }
+    
+    return (
     <div className="container">
       <form>
         <div className="row">
