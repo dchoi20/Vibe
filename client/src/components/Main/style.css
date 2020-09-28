@@ -1,5 +1,4 @@
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.carousel .carousel-item {
+  width: 500px;
+  height: 500px;
 }
