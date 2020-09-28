@@ -33,6 +33,7 @@ export default function Chatroom() {
         <button type="submit">send</button>
       </form>
       <div id="chat-log"></div>
+      
     </div>
   );
 }
