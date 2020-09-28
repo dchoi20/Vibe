@@ -9,8 +9,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/index";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-import Chatlogin from "./components/ChatLogin/index";
-import Chatroom from "./components/Chatroom/index";
+import Chatlogin from "./components/ChatLogin";
+import Chatroom from "./components/Chatroom";
 
 export default function App() {
   return (

@@ -17,11 +17,18 @@ export default function Main() {
     });
   }, []);
 
+  useEffect(() => {
+    let elems = document.querySelectorAll(".carousel");
+    let instances = M.Carousel.init(elems, options);
+  });
+
   return (
     <div>
-      <div>
+      <div className="carousel">
         {imagesState.images.map((image) => (
-          <img src={image.urls.small} alt={image.id} />
+          <a className="carousel-item" href="">
+            <img src={image.urls.thumb} alt={image.id} />
+          </a>
         ))}
       </div>
     </div>
