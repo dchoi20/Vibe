@@ -11,12 +11,16 @@ import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import Chatlogin from "./components/ChatLogin/index";
 import Chatroom from "./components/Chatroom/index";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <Router>
       <div>
         <Navbar />
+        <Hero />
+
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/" component={SignUpForm} component={SignUpForm} />
@@ -25,6 +29,7 @@ export default function App() {
           <Route exact path="/chatroom" component={Chatroom} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

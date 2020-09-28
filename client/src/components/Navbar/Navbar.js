@@ -4,13 +4,23 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <ul>
-      <li>
-        <Link to="/Home">vibe</Link>
-      </li>
-      <li>
-        <Link to="/chatlogin">Chatlogin</Link>
-      </li>
-    </ul>
+    <nav className="black">
+      <div className="nav-wrapper">
+        <a href="#" className="brand-logo center">
+          Vibe
+        </a>
+        <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <li>
+            <a href="sass.html">Sass</a>
+          </li>
+          <li>
+            <a href="badges.html">Components</a>
+          </li>
+          <li>
+            <a href="collapsible.html">JavaScript</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }
