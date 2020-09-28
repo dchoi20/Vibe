@@ -17,11 +17,6 @@ export default function Main() {
     });
   }, []);
 
-  useEffect(() => {
-    let elems = document.querySelectorAll(".carousel");
-    let instances = M.Carousel.init(elems, options);
-  });
-
   return (
     <div>
       <div className="carousel">
