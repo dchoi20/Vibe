@@ -19,7 +19,9 @@ export default function Hero() {
                 and connect with other users.
               </p>
               <div className="mt-5">
-                <a class="waves-effect waves-dark btn">Sign Up!</a>
+                <a class="waves-effect waves-dark btn white" href="#signupForm">
+                  Sign Up!
+                </a>
               </div>
             </div>
             <div className="col-md-6">{/* <SignUpForm /> */}</div>

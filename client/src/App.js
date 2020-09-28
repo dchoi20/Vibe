@@ -19,11 +19,13 @@ export default function App() {
     <Router>
       <div>
         <Navbar />
-        <Hero />
 
         <Switch>
           <Route exact path="/login" component={LoginForm} />
-          <Route exact path="/" component={SignUpForm} component={SignUpForm} />
+          <Route exact path="/">
+            <Hero />
+            <SignUpForm />
+          </Route>
           <Route exact path="/Home" component={Main} />
           <Route exact path="/chatlogin" component={Chatlogin} />
           <Route exact path="/chatroom" component={Chatroom} />

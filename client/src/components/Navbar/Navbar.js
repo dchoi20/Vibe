@@ -11,13 +11,10 @@ export default function Navbar() {
         </a>
         <ul id="nav-mobile" className="left hide-on-med-and-down">
           <li>
-            <a href="sass.html">Sass</a>
+            <a href="#signupForm">Sign Up</a>
           </li>
           <li>
-            <a href="badges.html">Components</a>
-          </li>
-          <li>
-            <a href="collapsible.html">JavaScript</a>
+            <a href="#loginForm">Login</a>
           </li>
         </ul>
       </div>

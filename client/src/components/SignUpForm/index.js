@@ -22,7 +22,7 @@ export default function SignUpForm() {
     });
   }
   return (
-    <div>
+    <div id="signupForm">
       <div className="container ">
         <h2 className=" mt-4 mb-4">Sign Up</h2>
         <div className="row mb-4">
