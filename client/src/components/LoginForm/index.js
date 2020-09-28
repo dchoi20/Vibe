@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./style.css";
 import axios from "axios";
-
+import SignUpForm from "../SignUpForm/index";
 export default function LoginForm() {
   const passwordInput = useRef();
   const emailInput = useRef();
@@ -11,16 +11,29 @@ export default function LoginForm() {
       email: emailInput.current.value,
       password: passwordInput.current.value,
     };
-    console.log(emailInput);
-    console.log(passwordInput);
-    axios.post("users/login", user).then((res) => {
-      console.log(res);
-      console.log(res.data);
-      window.location.replace("/main");
-    });
-  }
+   
+    console.log(emailInput)
+    console.log(passwordInput)
+    axios.post('users/login', user) 
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        console.log(res.data.token);
+        localStorage.token = res.data.token;
+        console.log(user);
 
-  return (
+        window.location.replace(`/home`)
+      })
+      if (!user.email && !user.password) {
+        return
+      }
+      
+      if (!user ) {
+        return window.location.replace("/users/login")
+      }
+    }
+    
+    return (
     <div className="container">
       <row>
         <div className="col-md-6" id="loginFormBG"></div>
