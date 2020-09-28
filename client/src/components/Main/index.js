@@ -19,11 +19,9 @@ export default function Main() {
 
   return (
     <div>
-      <div className="carousel">
+      <div>
         {imagesState.images.map((image) => (
-          <a className="carousel-item" href="">
-            <img src={image.urls.thumb} alt={image.id} />
-          </a>
+          <img src={image.urls.small} alt={image.id} />
         ))}
       </div>
     </div>
