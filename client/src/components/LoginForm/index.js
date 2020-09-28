@@ -35,40 +35,45 @@ export default function LoginForm() {
     
     return (
     <div className="container">
-      <form>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="email"
-              type="email"
-              className="validate"
-              ref={emailInput}
-            />
-            <label for="email">Email</label>
-          </div>
+      <row>
+        <div className="col-md-6" id="loginFormBG"></div>
+        <div className="col-md-6">
+          <form>
+            <div className="row">
+              <div className="input-field col s12">
+                <input
+                  id="email"
+                  type="email"
+                  className="validate"
+                  ref={emailInput}
+                />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <input
+                  id="password"
+                  type="password"
+                  className="validate"
+                  ref={passwordInput}
+                />
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <button
+              onClick={(event) => {
+                login(event);
+              }}
+              class="btn waves-effect waves-light"
+              type="submit"
+              name="action"
+            >
+              Log In
+            </button>
+          </form>
         </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="password"
-              type="password"
-              className="validate"
-              ref={passwordInput}
-            />
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <button
-          onClick={(event) => {
-            login(event);
-          }}
-          class="btn waves-effect waves-light"
-          type="submit"
-          name="action"
-        >
-          Log In
-        </button>
-      </form>
+      </row>
     </div>
   );
 }
