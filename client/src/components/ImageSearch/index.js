@@ -23,6 +23,11 @@ export default function ImageSearch() {
     console.log(...searchImagesState.searchImages);
   }
 
+  useEffect(() => {
+    let elems = document.querySelectorAll(".materialboxed");
+    M.Materialbox.init(elems);
+  });
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -39,7 +44,10 @@ export default function ImageSearch() {
           <div class="col s12 m6">
             <div class="card">
               <div class="card-image">
-                <img src={image.cover_photo.urls.regular} />
+                <img
+                  className="materialboxed"
+                  src={image.cover_photo.urls.regular}
+                />
 
                 <a class="btn-floating halfway-fab waves-effect waves-light red">
                   <i class="material-icons">favorite</i>
