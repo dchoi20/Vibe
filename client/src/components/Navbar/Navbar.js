@@ -27,7 +27,7 @@ export default function Navbar() {
               onClick={(event) => {
                 logOut(event);
               }}
-              className="btn waves-effect waves-light"
+              className="btn waves-effect waves-light blue"
               type="submit"
               name="action"
             >
