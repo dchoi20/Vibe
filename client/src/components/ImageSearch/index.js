@@ -6,20 +6,17 @@ export default function ImageSearch() {
     searchImages: [],
   });
 
-  useEffect(() => {
-    API.searchImages().then((res) => {
+  function onSubmit(e) {
+    e.preventDefault();
+    let query = e.target.search.value;
+
+    API.searchImages(query).then((res) => {
       console.log(res.data);
       setSearchImagesState({
         ...searchImagesState,
         searchImages: res.data,
       });
     });
-  }, []);
-
-  function onSubmit(e) {
-    e.preventDefault();
-    let searchedResult = e.target.search.value;
-    console.log(searchedResult);
   }
 
   return (
