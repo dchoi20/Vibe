@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 const socketio = require("socket.io");
 const http = require("http");
+const { param } = require("./routers/user");
 
 const app = express();
 const server = http.createServer(app);
@@ -49,6 +50,14 @@ if (process.env.NODE_ENV === "production") {
 app.get("/images", (req, res) => {
   Axios.get(
     `https://api.unsplash.com/photos/?client_id=${REACT_APP_API_KEY}`
+  ).then(({ data }) => {
+    res.send(data);
+  });
+});
+
+app.get("/searchimages/:query", (req, res) => {
+  Axios.get(
+    `https://api.unsplash.com/search/collections?per_page=30?page=3&query=${req.params.query}&client_id=${REACT_APP_API_KEY}`
   ).then(({ data }) => {
     res.send(data);
   });
