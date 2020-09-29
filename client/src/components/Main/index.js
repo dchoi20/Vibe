@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
+import ImageSearch from "../ImageSearch";
 
 import NavBar from "../Navbar/Navbar";
 import { Form, Button } from "react-bootstrap";
@@ -34,16 +35,13 @@ export default function Main() {
     <div>
       <div className="carousel">
         {imagesState.images.map((image) => (
-          <a className="carousel-item" href="">
+          <a className="carousel-item" href="" key={image.id}>
             <img src={image.urls.regular} alt={image.id} />
           </a>
         ))}
       </div>
-      <Form.Control type="text" placeholder="Search Here ..." />
-      <Button variant="primary" size="lg" block>
-        Search Image
-      </Button>
       <br />
+      <ImageSearch />
     </div>
   );
 }

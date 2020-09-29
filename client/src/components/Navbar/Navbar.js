@@ -6,8 +6,8 @@ import axios from "axios";
 export default function Navbar() {
   function logOut(event) {
     event.preventDefault();
-    localStorage.removeItem('token')
-    window.location.replace(`/`)
+    localStorage.removeItem("token");
+    window.location.replace(`/`);
   }
   return (
     <nav className="black">
@@ -22,21 +22,20 @@ export default function Navbar() {
           <li>
             <a href="#loginForm">Login</a>
           </li>
-     <li>
-      <button
-          onClick={(event) => {
-            logOut(event);
-          }}
-          class="btn waves-effect waves-light"
-          type="submit"
-          name="action"
-        >
-          Log out
-        </button>
-      </li>
+          <li>
+            <button
+              onClick={(event) => {
+                logOut(event);
+              }}
+              className="btn waves-effect waves-light"
+              type="submit"
+              name="action"
+            >
+              Log out
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
-
   );
 }
