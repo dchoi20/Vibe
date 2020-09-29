@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import LoginForm from "../LoginForm";
 import "./style.css";
 import axios from "axios";
 
@@ -26,8 +27,9 @@ export default function SignUpForm() {
       <div id="signupForm">
         <div className="container">
           <div className=" row">
-            <form className="formPosition col s6">
-              <h2>Signup</h2>
+            <form className="formPosition col s5">
+              <h6>New User?</h6>
+              <p>Sign Up Here</p>
               <div className="row">
                 <div className="input-field col s12">
                   <input
@@ -72,6 +74,9 @@ export default function SignUpForm() {
                 Sign Up
               </button>
             </form>
+          <div className="col s2"></div>
+              <LoginForm />
+            
           </div>
         </div>
       </div>
