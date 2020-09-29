@@ -17,18 +17,11 @@ export default function ImageSearch() {
       console.log(res.data);
       setSearchImagesState({
         ...searchImagesState,
-<<<<<<< HEAD
         searchImages: res.data.results,
-=======
-        searchImages: res.data.results
->>>>>>> master
       });
     });
-    console.log(...searchImagesState.searchImages)
+    console.log(...searchImagesState.searchImages);
   }
-
-
-
 
   return (
     <div>
@@ -41,24 +34,24 @@ export default function ImageSearch() {
         <input type="submit" value="Submit"></input>
       </form>
 
+      {searchImagesState.searchImages.map((image) => (
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src={image.cover_photo.urls.regular} />
 
-
-        {searchImagesState.searchImages.map((image) => (
-          <div className="row">
-      <div className="card col s6">
-          <div className="card-image waves-effect waves-block waves-light" key={image.id}>
-            <img className="activator" src={image.cover_photo.urls.regular} alt={image.id} />
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                  <i class="material-icons">favorite</i>
+                </a>
+              </div>
+              <div class="card-content">
+                <p>{image.cover_photo.alt_description}</p>
+              </div>
+            </div>
           </div>
-          <div class="card-content">
-        <div class="card-title activator grey-text text-darken-4">{image.cover_photo.alt_description}</div>
-      <p><a href="#">Add to Favorite</a></p>
+        </div>
+      ))}
     </div>
-    
-  
-      </div>
-    </div>
-        ))}
-    </div>
-
   );
 }
