@@ -26,7 +26,7 @@ export default function Main() {
     console.log("I was called!");
     if (imagesState.images.length > 0) {
       let elems = document.querySelectorAll(".carousel");
-      console.log(elems);
+
       M.Carousel.init(elems);
     }
   }, [imagesState]);
@@ -35,9 +35,12 @@ export default function Main() {
     <div>
       <div className="carousel">
         {imagesState.images.map((image) => (
-          <a className="carousel-item" href="" key={image.id}>
-            <img src={image.urls.regular} alt={image.id} />
-          </a>
+          <img
+            className="carousel-item"
+            src={image.urls.regular}
+            alt={image.id}
+            key={image.id}
+          />
         ))}
       </div>
       <br />
