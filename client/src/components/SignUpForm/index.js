@@ -22,12 +22,12 @@ export default function SignUpForm() {
     });
   }
   return (
-    <div id="signupForm">
-      <div className="container ">
-        <h2 className=" mt-4 mb-4">Sign Up</h2>
-        <div className="row mb-4">
-          <div className="col-md-6">
-            <form>
+    <div className="formz">
+      <div id="signupForm">
+        <div className="container">
+          <div className=" row">
+            <form className="formPosition col s6">
+              <h2>Signup</h2>
               <div className="row">
                 <div className="input-field col s12">
                   <input
@@ -65,7 +65,7 @@ export default function SignUpForm() {
                 onClick={(event) => {
                   signUp(event);
                 }}
-                class="btn waves-effect waves-light"
+                class="btn waves-effect waves-light blue"
                 type="submit"
                 name="action"
               >
