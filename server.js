@@ -57,7 +57,7 @@ app.get("/images", (req, res) => {
 
 app.get("/searchimages/:query", (req, res) => {
   Axios.get(
-    `https://api.unsplash.com/search/collections?page=3&query=${req.params.query}&client_id=${REACT_APP_API_KEY}`
+    `https://api.unsplash.com/search/collections?per_page=30?page=3&query=${req.params.query}&client_id=${REACT_APP_API_KEY}`
   ).then(({ data }) => {
     res.send(data);
   });
