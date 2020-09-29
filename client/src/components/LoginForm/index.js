@@ -65,7 +65,7 @@ export default function LoginForm() {
               onClick={(event) => {
                 login(event);
               }}
-              class="btn waves-effect waves-light"
+              class="btn waves-effect waves-light blue"
               type="submit"
               name="action"
             >

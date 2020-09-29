@@ -6,9 +6,9 @@ Vibe is a social app using Unsplash's photography API to allow users to create t
 
 ## Team Members
 
-- [Danny Choi](https://github.com/dchoi20)
-- [Ian Pyeatt](https://github.com/pyeatti)
-- [Evan Mohammed](https://github.com/EvanMohammed)
+- [Danny Choi](https://github.com/dchoi20) / Front End / User Interface / React
+- [Ian Pyeatt](https://github.com/pyeatti) / Database / User Authentication 
+- [Evan Mohammed](https://github.com/EvanMohammed) / API Setup / React
 
 ## Technologies
 
