@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import NavbarLogin from "./components/NavbarLogin";
+import NavbarMain from "./components/NavbarMain";
 import Main from "./components/Main/index";
 import LoginForm from "./components/LoginForm";
 import user from "./components/LoginForm";
@@ -16,8 +17,6 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Navbar />
-
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <ProtectedRoute exact={true} path="/home" component={Main} />
@@ -25,12 +24,13 @@ export default function App() {
           <ProtectedRoute path="/chatroom" component={Chatroom} />
           <ProtectedRoute path="/people" component={People} />
           <Route exact path="/">
+            <NavbarLogin />
             <Hero />
             <SignUpForm />
+            <Footer />
           </Route>
         </Switch>
       </div>
-      <Footer />
     </Router>
   );
 }
