@@ -7,22 +7,22 @@ export default function People() {
     people: [],
   });
 
-  axios.get("users/all").then((res) => {
-    setPeopleState({
-      ...peopleState,
-      people: res.data,
+  useEffect(() => {
+    axios.get("users/all").then((res) => {
+      setPeopleState({
+        ...peopleState,
+        people: res.data,
+      });
     });
+  }, []);
 
-    // res.data.map((person) => {
-    //     console.log(person.name)
-    // })
-  });
   console.log(peopleState.people);
 
   return (
     <div className="People">
-      {}
-      <h1></h1>
+      {peopleState.people.map((person) => {
+        return <h1>{person.name}</h1>;
+      })}
     </div>
   );
 }
