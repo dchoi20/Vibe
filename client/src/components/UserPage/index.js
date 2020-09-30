@@ -7,7 +7,13 @@ export default function UserPage() {
   return (
     <div>
       <NavbarMain />
-      <h1>HelloWorld</h1>
+      <div className="container">
+        <div className="row center-align">
+          <h1>Ian</h1>
+          <p>My Collection</p>
+        </div>
+        <div className="row"></div>
+      </div>
     </div>
   );
 }
