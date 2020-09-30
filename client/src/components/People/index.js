@@ -1,40 +1,28 @@
-import React , {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 
-export default function People () {
-    const [peopleState,setPeopleState] = useState({
-        people : []
-    }) 
+export default function People() {
+  const [peopleState, setPeopleState] = useState({
+    people: [],
+  });
 
-
+  useEffect(() => {
     axios.get("users/all").then((res) => {
-   
+      setPeopleState({
+        ...peopleState,
+        people: res.data,
+      });
+    });
+  }, []);
 
-        setPeopleState({
-            ...peopleState,
-            people: res.data
-        })
-        
-        // res.data.map((person) => {
-            //     console.log(person.name)
-            // })
-            
-        })
-        console.log(peopleState.people)
+  console.log(peopleState.people);
 
-    
-
-
-
-
-
-
-    
-    return (
-        <div className="People" >
-            {}
-        <h1></h1>
+  return (
+    <div className="People">
+      {peopleState.people.map((person) => {
+        return <h1>{person.name}</h1>;
+      })}
     </div>
-)
+  );
 }
