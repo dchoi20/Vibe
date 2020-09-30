@@ -6,6 +6,7 @@ import "./style.css";
 export default function ImageSearch() {
   const [searchImagesState, setSearchImagesState] = useState({
     searchImages: [],
+    likeImage: false,
   });
 
   function onSubmit(e) {
@@ -27,11 +28,6 @@ export default function ImageSearch() {
     let elems = document.querySelectorAll(".materialboxed");
     M.Materialbox.init(elems);
   });
-
-  function likedImage() {
-    document.getElementById("likeImage").classList.remove("black");
-    document.getElementById("likeImage").classList.add("red");
-  }
 
   return (
     <div>
@@ -55,9 +51,17 @@ export default function ImageSearch() {
                 />
 
                 <a
-                  id="likeImage"
-                  className=" btn-floating halfway-fab waves-effect waves-light black"
-                  onClick={likedImage}
+                  className={
+                    searchImagesState.likeImage
+                      ? "btn-floating halfway-fab waves-effect waves-light red"
+                      : "btn-floating halfway-fab waves-effect waves-light black"
+                  }
+                  onClick={() =>
+                    setSearchImagesState({
+                      ...searchImagesState,
+                      likeImage: true,
+                    })
+                  }
                 >
                   <i className="material-icons">favorite</i>
                 </a>
