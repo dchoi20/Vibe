@@ -30,7 +30,10 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    favImageURL: {
+        type: String,
+    }
 })
 
 userSchema.pre('save', async function (next) {
