@@ -3,8 +3,9 @@ import API from "../../utils/API";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import ImageSearch from "../ImageSearch";
-
-import NavBar from "../Navbar/Navbar";
+import NavbarMain from "../NavbarMain"
+import Footer from "../Footer"
+// import NavbarMain from "../NavbarMain/";
 import { Form, Button } from "react-bootstrap";
 
 export default function Main() {
@@ -32,7 +33,9 @@ export default function Main() {
   }, [imagesState]);
 
   return (
+
     <div>
+      <NavbarMain />
       <div className="carousel">
         {imagesState.images.map((image) => (
           <img
@@ -45,6 +48,7 @@ export default function Main() {
       </div>
       <br />
       <ImageSearch />
+      <Footer />
     </div>
   );
 }

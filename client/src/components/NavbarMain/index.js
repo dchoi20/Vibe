@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import axios from "axios";
+import "./style.css";
 
 export default function Navbar() {
   function logOut(event) {
@@ -13,26 +13,19 @@ export default function Navbar() {
     <nav className="black">
       <div className="nav-wrapper">
         <a href="#" className="brand-logo center">
-          Vibe
+          VIBE
         </a>
         <ul id="nav-mobile" className="left hide-on-med-and-down">
           <li>
-            <a href="#signupForm">Sign Up</a>
-          </li>
-          <li>
-            <a href="#loginForm">Login</a>
-          </li>
-          <li>
-            <button
+            <a
               onClick={(event) => {
                 logOut(event);
               }}
-              className="btn waves-effect waves-light blue"
               type="submit"
               name="action"
             >
-              Log out
-            </button>
+              Logout
+            </a>
           </li>
         </ul>
       </div>
