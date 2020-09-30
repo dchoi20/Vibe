@@ -5,7 +5,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import ImageSearch from "../ImageSearch";
 import NavbarMain from "../NavbarMain"
 import Footer from "../Footer"
-// import NavbarMain from "../NavbarMain/";
+
 import { Form, Button } from "react-bootstrap";
 
 export default function Main() {
