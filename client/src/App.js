@@ -11,6 +11,7 @@ import Chatlogin from "./components/ChatLogin/index";
 import Chatroom from "./components/Chatroom/index";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import People from "./components/People";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <ProtectedRoute exact={true} path="/home" component={Main} />
           <ProtectedRoute path="/chatlogin" component={Chatlogin} />
           <ProtectedRoute path="/chatroom" component={Chatroom} />
+          <ProtectedRoute path="/people" component={People} />
           <Route exact path="/">
             <NavbarLogin />
             <Hero />

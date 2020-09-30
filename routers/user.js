@@ -31,6 +31,11 @@ router.post("/users/login", async (req, res) => {
     res.status(400).send(error);
   }
 });
+// router.post("/users/me/favorite" , async (req,res) => {
+//   const favImageURL = req.body.favImageURL;
+
+
+// })
 router.get('/users/me', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
@@ -39,44 +44,62 @@ router.get('/users', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
 })
-router.post('/users/me/logout', auth, async (req, res) => {
-  // Log user out of the application
-  try {
-    req.user.tokens = req.user.tokens.filter((token) => {
-      return token.token != req.token
+
+// router.get("/users/all", async (req, res) => {
+//  try{  const allUsers= res.send(req.user);
+//   res.json(allUsers)
+//  }catch{
+//    console.log("broken")
+//  }})
+router.get('/users/all', async (req, res) => {
+  User.find().then((data) => {
+    res.json(data)
+  }).catch(err => {
+    console.log(err)
+  })
+})
+
+
+
+
+    router.post('/users/me/logout', auth, async (req, res) => {
+      // Log user out of the application
+      try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+          return token.token != req.token
+        })
+        await req.user.save()
+        res.send()
+      } catch (error) {
+        res.status(500).send(error)
+      }
     })
-    await req.user.save()
-    res.send()
-  } catch (error) {
-    res.status(500).send(error)
-  }
-})
 
-router.post('/users/me/logoutall', auth, async (req, res) => {
-  // Log user out of all devices
-  try {
-    req.user.tokens.splice(0, req.user.tokens.length)
-    await req.user.save()
-    res.send()
-  } catch (error) {
-    res.status(500).send(error)
-  }
-})
+    router.post('/users/me/logoutall', auth, async (req, res) => {
+      // Log user out of all devices
+      try {
+        req.user.tokens.splice(0, req.user.tokens.length)
+        await req.user.save()
+        res.send()
+      } catch (error) {
+        res.status(500).send(error)
+      }
+    })
 
 
-const checkToken = (req, res, next) => {
-  const header = req.headers['authorization'];
+    const checkToken = (req, res, next) => {
+      const header = req.headers['authorization'];
 
-  if(typeof header !== 'undefined') {
-      const bearer = header.split(' ');
-      const token = bearer[1];
+      if (typeof header !== 'undefined') {
+        const bearer = header.split(' ');
+        const token = bearer[1];
 
-      req.token = token;
-      next();
-  } else {
-      //If header is undefined return Forbidden (403)
-      res.sendStatus(403)
-  }
-}
+        req.token = token;
+        next();
+      } else {
+        //If header is undefined return Forbidden (403)
+        res.sendStatus(403)
+      }
+    }
 
-module.exports = router
+    module.exports = router
