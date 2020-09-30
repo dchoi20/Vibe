@@ -28,6 +28,11 @@ export default function ImageSearch() {
     M.Materialbox.init(elems);
   });
 
+  function likedImage() {
+    document.getElementById("likeImage").classList.remove("black");
+    document.getElementById("likeImage").classList.add("red");
+  }
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -40,20 +45,24 @@ export default function ImageSearch() {
       </form>
 
       {searchImagesState.searchImages.map((image) => (
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card">
-              <div class="card-image">
+        <div className="row">
+          <div className="col s12 m6">
+            <div className="card">
+              <div className="card-image">
                 <img
                   className="materialboxed"
                   src={image.cover_photo.urls.regular}
                 />
 
-                <a class="btn-floating halfway-fab waves-effect waves-light red">
-                  <i class="material-icons">favorite</i>
+                <a
+                  id="likeImage"
+                  className=" btn-floating halfway-fab waves-effect waves-light black"
+                  onClick={likedImage}
+                >
+                  <i className="material-icons">favorite</i>
                 </a>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <p>{image.cover_photo.alt_description}</p>
               </div>
             </div>
