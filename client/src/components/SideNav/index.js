@@ -1,37 +1,67 @@
 import React, { useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
+import People from "../People";
 
 export default function SideNav() {
   useEffect(() => {
-    var elems = document.querySelectorAll(".dropdown-trigger");
-    M.Dropdown.init(elems);
+    var elems = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(elems);
   });
+  function logOut(event) {
+    event.preventDefault();
+    localStorage.removeItem("token");
+    window.location.replace(`/`);
+  }
+
   return (
     <div>
-      <a class="dropdown-trigger btn" href="#" data-target="dropdown1">
-        Drop Me!
-      </a>
+      <nav className="blue">
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo center">
+            VIBE
+          </a>
 
-      <ul id="dropdown1" class="dropdown-content">
-        <li>
-          <a href="#!"></a>
-        </li>
-        <li>
-          <a href="#!">two</a>
-        </li>
-
-        <li>
-          <a href="#!">three</a>
-        </li>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li>
+              <a
+                onClick={(event) => {
+                  logOut(event);
+                }}
+                type="submit"
+                name="action"
+              >
+                Logout
+              </a>
+            </li>
+          </ul>
+          <a
+            href="#"
+            data-target="slide-out"
+            class=" left sidenav-trigger show-on-large"
+          >
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+      </nav>
+      <ul id="slide-out" class="sidenav">
         <li>
           <a href="#!">
-            <i class="material-icons">view_module</i>four
+            <i class="material-icons">cloud</i>First Link With Icon
           </a>
         </li>
         <li>
-          <a href="#!">
-            <i class="material-icons">cloud</i>five
-          </a>
+          <a href="#!">Second Link</a>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <li>
+          <a class="subheader">Subheader</a>
+        </li>
+        <div class="divider"></div>
+        <h5 className="center-align">Other Users</h5>
+        <li>
+          <People />
         </li>
       </ul>
     </div>

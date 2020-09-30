@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 export default function People() {
   const [peopleState, setPeopleState] = useState({
@@ -19,9 +20,15 @@ export default function People() {
   console.log(peopleState.people);
 
   return (
-    <div className="People">
+    <div class="People">
       {peopleState.people.map((person) => {
-        return <h1>{person.name}</h1>;
+        return (
+          <li>
+            <a href="#!">
+              <p>{person.name}</p>
+            </a>
+          </li>
+        );
       })}
     </div>
   );
