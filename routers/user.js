@@ -31,6 +31,11 @@ router.post("/users/login", async (req, res) => {
     res.status(400).send(error);
   }
 });
+// router.post("/users/me/favorite" , async (req,res) => {
+//   const favImageURL = req.body.favImageURL;
+  
+
+// })
 router.get('/users/me', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
@@ -39,6 +44,10 @@ router.get('/users', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
 })
+// router.get('/users/all', auth, async (req, res) => {
+//   // View logged in users
+//   res.send(users)
+// })
 router.post('/users/me/logout', auth, async (req, res) => {
   // Log user out of the application
   try {
