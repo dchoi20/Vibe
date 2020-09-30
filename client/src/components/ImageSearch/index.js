@@ -6,6 +6,7 @@ import "./style.css";
 export default function ImageSearch() {
   const [searchImagesState, setSearchImagesState] = useState({
     searchImages: [],
+    likeImage: false,
   });
 
   function onSubmit(e) {
@@ -40,20 +41,32 @@ export default function ImageSearch() {
       </form>
 
       {searchImagesState.searchImages.map((image) => (
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card">
-              <div class="card-image">
+        <div className="row">
+          <div className="col s12 m6">
+            <div className="card">
+              <div className="card-image">
                 <img
                   className="materialboxed"
                   src={image.cover_photo.urls.regular}
                 />
 
-                <a class="btn-floating halfway-fab waves-effect waves-light red">
-                  <i class="material-icons">favorite</i>
+                <a
+                  className={
+                    searchImagesState.likeImage
+                      ? "btn-floating halfway-fab waves-effect waves-light red"
+                      : "btn-floating halfway-fab waves-effect waves-light black"
+                  }
+                  onClick={() =>
+                    setSearchImagesState({
+                      ...searchImagesState,
+                      likeImage: true,
+                    })
+                  }
+                >
+                  <i className="material-icons">favorite</i>
                 </a>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <p>{image.cover_photo.alt_description}</p>
               </div>
             </div>
