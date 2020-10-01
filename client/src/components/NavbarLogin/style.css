@@ -1,1 +1,14 @@
-
+.Logo {
+  width: auto;
+  height: 50px;
+  padding-top: 0.75rem;
+}
+a .Logo:last-child {
+  display: none;
+}
+a:hover .Logo:last-child {
+  display: block;
+}
+a:hover .Logo:first-child {
+  display: none;
+}

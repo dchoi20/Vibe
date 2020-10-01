@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
+import Logo from "../assets/Vibe_Logo_White.png";
+import AltLogo from "../assets/Vibe_Alt_Logo_White.png";
 import "./style.css";
 import axios from "axios";
 export default function Navbar() {
@@ -13,7 +15,8 @@ export default function Navbar() {
       <nav className="black">
         <div className="nav-wrapper">
           <a href="#" className="brand-logo center">
-            VIBE
+            <img className="Logo" alt="VIBE" src={Logo} />
+            <img className="Logo" alt="VIBE" src={AltLogo} />
           </a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li>
