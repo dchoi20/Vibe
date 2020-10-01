@@ -1,7 +1,4 @@
-/* .card  {
-    width: 200px;
-    height: 500px;
-} */
-.form {
-  justify-content: center;
+#searchStyle {
+  margin-top: 10vh;
+  min-height: 58vh;
 }

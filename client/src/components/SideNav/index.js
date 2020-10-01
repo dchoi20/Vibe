@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import People from "../People";
-
+import Logo from "../assets/Vibe_Logo_White.png";
+import SideNavLogo from "../assets/Vibe_Logo.png";
+import AltLogo from "../assets/Vibe_Alt_Logo_White.png";
 export default function SideNav() {
   useEffect(() => {
     var elems = document.querySelectorAll(".sidenav");
@@ -15,10 +17,11 @@ export default function SideNav() {
 
   return (
     <div>
-      <nav className="blue">
+      <nav className="black">
         <div className="nav-wrapper">
           <a href="#" className="brand-logo center">
-            VIBE
+            <img className="Logo" alt="VIBE" src={Logo} />
+            <img className="Logo" alt="VIBE" src={AltLogo} />
           </a>
 
           <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -34,6 +37,7 @@ export default function SideNav() {
               </a>
             </li>
           </ul>
+
           <a
             href="#"
             data-target="slide-out"
@@ -45,15 +49,28 @@ export default function SideNav() {
       </nav>
       <ul id="slide-out" className="sidenav">
         <li>
+          <div className="user-view">
+            <a href="#user" className="center-align">
+              <img className="circle" src={SideNavLogo} />
+            </a>
+          </div>
+        </li>
+        <li>
           <a href="#!">
-            <h6 className="center-align">Hello, User</h6>
+            <h6>Hello, User</h6>
           </a>
         </li>
         <li>
           <div className="divider"></div>
         </li>
         <li>
-          <a href="../Favorites">Your Collection</a>
+          <a href="/favorites">Your Collection</a>
+        </li>
+        <li>
+          <a href="#!">Featured Images</a>
+        </li>
+        <li>
+          <a href="#searchStyle">Search Images</a>
         </li>
 
         <div className="divider"></div>
