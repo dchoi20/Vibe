@@ -32,11 +32,7 @@ router.post("/users/login", async (req, res) => {
     res.status(400).send(error);
   }
 });
-// router.post("/users/me/favorite" , async (req,res) => {
-//   const favImageURL = req.body.favImageURL;
 
-
-// })
 router.get('/users/me', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
@@ -48,13 +44,6 @@ router.get('/users', auth, async (req, res) => {
 
 
 
-
-// router.get("/users/all", async (req, res) => {
-//  try{  const allUsers= res.send(req.user);
-//   res.json(allUsers)
-//  }catch{
-//    console.log("broken")
-//  }})
 router.get('/users/all', async (req, res) => {
   User.find().then((data) => {
     res.json(data)
@@ -67,7 +56,7 @@ router.get('/users/all', async (req, res) => {
 router.post("/users/favorite/", ({body}, res) => {
 
  
-
+//joining two collection in a database
 
   Favorite.create(body)
     .then(({ _id })=>User.findOneAndUpdate({} , {$push: {favImage_ID: _id }} , {new: true}))
@@ -76,7 +65,7 @@ router.post("/users/favorite/", ({body}, res) => {
     })
     .catch(err => res.status(422).json(err));
 });
-
+// retrieving data from one collection into the other
 router.get("/users/favorites/", auth, (req, res) => {
   User.find({})
     .populate("favImageURL")
@@ -87,43 +76,6 @@ router.get("/users/favorites/", auth, (req, res) => {
       res.json(err);
     });
 });
-
-// User.aggregate([
-//   {
-//     $lookup: {
-//       from: "favorites",
-//       localField: "name",
-//       foreignField: "name",
-//       as: "favorites_collection"
-//     }}])
-
-
-// Favorite.aggregate([
-//   {
-//     $lookup: {
-//       from: "users",
-//       localField: "user",
-//       foreignField: "name",
-//       as: "users_collection"
-//     }
-
-  // },
-  // {
-  //   $unwind: "$users_collection"
-  // },
-  // {
-  //   $match: {
-  //     $and: [{ "name": "evan" }]
-  //   }
-  // },
-  // {
-  //   $project: {
-      
-  //     email: "$users_collection.email",
-  //   }
-//   }
-// ])
-
 
 
 
