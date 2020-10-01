@@ -1,6 +1,6 @@
 const express = require("express");
 const User = require("../models/User");
-const Favorite = require("../models/User");
+const Favorite = require("../models/Favorite");
 const auth = require("../middleware/auth");
 const router = express.Router();
 
@@ -64,33 +64,48 @@ router.get('/users/all', async (req, res) => {
 })
 
 
-router.post("/users/favorite/", (req, res) => {
+router.post("/users/favorite/", ({body}, res) => {
 
  
 
 
-  Favorite.create(req.body)
-    .then(data => res.json(data))
+  Favorite.create(body)
+    .then(({ _id })=>User.findOneAndUpdate({} , {$push: {favImage_ID: _id }} , {new: true}))
+    .then(data => {
+      res.json(data)
+    })
     .catch(err => res.status(422).json(err));
 });
-User.aggregate([
-  {
-    $lookup: {
-      from: "favorites",
-      localField: "name",
-      foreignField: "name",
-      as: "favorites_collection"
-    }}])
+
+router.get("/users/favorites/", auth, (req, res) => {
+  User.find({})
+    .populate("favImageURL")
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+// User.aggregate([
+//   {
+//     $lookup: {
+//       from: "favorites",
+//       localField: "name",
+//       foreignField: "name",
+//       as: "favorites_collection"
+//     }}])
 
 
-Favorite.aggregate([
-  {
-    $lookup: {
-      from: "users",
-      localField: "user",
-      foreignField: "name",
-      as: "users_collection"
-    }
+// Favorite.aggregate([
+//   {
+//     $lookup: {
+//       from: "users",
+//       localField: "user",
+//       foreignField: "name",
+//       as: "users_collection"
+//     }
 
   // },
   // {
@@ -106,8 +121,8 @@ Favorite.aggregate([
       
   //     email: "$users_collection.email",
   //   }
-  }
-])
+//   }
+// ])
 
 
 
