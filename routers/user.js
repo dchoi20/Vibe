@@ -53,24 +53,27 @@ router.get('/users/all', async (req, res) => {
 })
 
 
-router.post("/users/favorite/", ({body}, res) => {
-
- 
+router.post("/users/favorite/",  auth , ({user,body}, res) => {
+  // console.log(body)
+//  console.log("Hello World")
 //joining two collection in a database
-
+  // res.send("hellow")
+  // console.log(user)
   Favorite.create(body)
-    .then(({ _id })=>User.findOneAndUpdate({} , {$push: {favImage_ID: _id }} , {new: true}))
+    .then(({ _id })=>User.findOneAndUpdate({_id: user._id} , {$push: {favImageURL: _id }} , {new: true}))
     .then(data => {
       res.json(data)
     })
     .catch(err => res.status(422).json(err));
 });
 // retrieving data from one collection into the other
-router.get("/users/favorites/", auth, (req, res) => {
-  User.find({})
+router.get("/users/favorite/", auth, (req, res) => {
+  console.log("test GET")
+  User.find({_id: req.user._id})
     .populate("favImageURL")
     .then(data => {
-      res.json(data);
+      console.log(data)
+      res.json(data)
     })
     .catch(err => {
       res.json(err);
