@@ -6,8 +6,6 @@ import ImageSearch from "../ImageSearch";
 import SideNav from "../SideNav";
 import Footer from "../Footer";
 
-import { Form, Button } from "react-bootstrap";
-
 export default function Main() {
   const [imagesState, setImagesState] = useState({
     images: [],

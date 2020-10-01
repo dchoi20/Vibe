@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SideNav from "../SideNav";
+import Footer from "../Footer";
+
 export default function Favorites() {
   const [userFavorite, setUserFavorite] = useState({
     collection: [],
@@ -26,9 +29,15 @@ export default function Favorites() {
 
   return (
     <div>
-      {userFavorite.collection.map((image) => {
-        return <img src={image.favImageURL} alt={image._id} />;
-      })}
+      <SideNav />
+      <div className="container">
+        <div class="row collectionStyle">
+          {userFavorite.collection.map((image) => {
+            return <img src={image.favImageURL} alt={image._id} />;
+          })}
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
