@@ -20,7 +20,7 @@ export default function ImageSearch() {
     let query = e.target.search.value;
 
     API.searchImages(query).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setSearchImagesState({
         ...searchImagesState,
         searchImages: res.data.results,
@@ -41,7 +41,7 @@ export default function ImageSearch() {
     console.log(image.cover_photo.urls.regular);
 
     axios.post("/users/favorite/", { favImageURL: favorite }, config).then((res) => {
-      console.log(favorite)
+      // console.log(favorite)
       setSearchImagesState({
         ...searchImagesState,
         searchImages: searchImagesState.searchImages.map((image, j) => {

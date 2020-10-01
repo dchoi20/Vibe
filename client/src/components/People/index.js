@@ -17,7 +17,7 @@ export default function People() {
     });
   }, []);
 
-  console.log(peopleState.people);
+  // console.log(peopleState.people);
 
   return (
     <div class="People">
