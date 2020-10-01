@@ -8,8 +8,6 @@ export default function ImageSearch() {
     searchImages: [],
   });
 
-  const [like, setLike] = useState(false);
-
   function onSubmit(e) {
     e.preventDefault();
 
@@ -29,11 +27,16 @@ export default function ImageSearch() {
     M.Materialbox.init(elems);
   });
 
-  function likeImage(e) {
-    console.log(
-      e.target.parentNode.parentNode.firstChild.firstChild.getAttribute("src")
-    );
-    setLike(!like);
+  function likeImage(e, image, i) {
+    // Save to database
+    console.log(image.cover_photo.urls.regular);
+    setSearchImagesState({
+      ...searchImagesState,
+      searchImages: searchImagesState.searchImages.map((image, j) => {
+        if (i === j) return { ...image, isLiked: !image.isLiked };
+        return image;
+      }),
+    });
   }
 
   return (
@@ -47,7 +50,7 @@ export default function ImageSearch() {
         <input type="submit" value="Submit"></input>
       </form>
 
-      {searchImagesState.searchImages.map((image) => (
+      {searchImagesState.searchImages.map((image, i) => (
         <div className="row">
           <div className="col s12 m6">
             <div className="card">
@@ -59,11 +62,11 @@ export default function ImageSearch() {
 
                 <a
                   className={
-                    like
+                    image.isLiked
                       ? "btn-floating halfway-fab waves-effect waves-light red"
                       : "btn-floating halfway-fab waves-effect waves-light black"
                   }
-                  onClick={likeImage}
+                  onClick={(e) => likeImage(e, image, i)}
                 >
                   <i className="material-icons">favorite</i>
                 </a>
