@@ -45,15 +45,17 @@ export default function SideNav() {
       </nav>
       <ul id="slide-out" class="sidenav">
         <li>
-          <a href="#!"><h6 className="center-align">Hello, User</h6></a>
+          <a href="#!">
+            <h6 className="center-align">Hello, User</h6>
+          </a>
         </li>
         <li>
           <div class="divider"></div>
         </li>
         <li>
-          <a href="#!">Your Collection</a>
+          <a href="../Favorites">Your Collection</a>
         </li>
-        
+
         <div class="divider"></div>
         <h6 className="center-align">Check out other users!</h6>
         <li>
