@@ -33,96 +33,95 @@ router.post("/users/login", async (req, res) => {
   }
 });
 
-router.get('/users/me', auth, async (req, res) => {
+router.get("/users/me", auth, async (req, res) => {
   // View logged in users
-  res.send(req.user)
-})
-router.get('/users', auth, async (req, res) => {
+  res.send(req.user);
+});
+router.get("/users", auth, async (req, res) => {
   // View logged in users
-  res.send(req.user)
-})
+  res.send(req.user);
+});
 
+router.get("/users/all", async (req, res) => {
+  User.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
-
-router.get('/users/all', async (req, res) => {
-  User.find().then((data) => {
-    res.json(data)
-  }).catch(err => {
-    console.log(err)
-  })
-})
-
-
-router.post("/users/favorite/",  auth , ({user,body}, res) => {
+router.post("/users/favorite/", auth, ({ user, body }, res) => {
   // console.log(body)
-//  console.log("Hello World")
-//joining two collection in a database
+  //  console.log("Hello World")
+  //joining two collection in a database
   // res.send("hellow")
   // console.log(user)
   Favorite.create(body)
-    .then(({ _id })=>User.findOneAndUpdate({_id: user._id} , {$push: {favImageURL: _id }} , {new: true}))
-    .then(data => {
-      res.json(data)
+    .then(({ _id }) =>
+      User.findOneAndUpdate(
+        { _id: user._id },
+        { $push: { favImageURL: _id } },
+        { new: true }
+      )
+    )
+    .then((data) => {
+      res.json(data);
     })
-    .catch(err => res.status(422).json(err));
+    .catch((err) => res.status(422).json(err));
 });
 // retrieving data from one collection into the other
 router.get("/users/favorite/", auth, (req, res) => {
-  console.log("test GET")
-  User.find({_id: req.user._id})
+  console.log("test GET");
+  User.findOne({ _id: req.user._id })
     .populate("favImageURL")
-    .then(data => {
-      console.log(data)
-      res.json(data)
+    .then((data) => {
+      console.log(data);
+      res.json(data.favImageURL);
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
 });
 
-
-
-
-
-
-router.post('/users/me/logout', auth, async (req, res) => {
+router.post("/users/me/logout", auth, async (req, res) => {
   // Log user out of the application
   try {
     req.user.tokens = req.user.tokens.filter((token) => {
-      return token.token != req.token
-    })
-    await req.user.save()
-    res.send()
+      return token.token != req.token;
+    });
+    await req.user.save();
+    res.send();
   } catch (error) {
-    res.status(500).send(error)
+    res.status(500).send(error);
   }
-})
+});
 
-router.post('/users/me/logoutall', auth, async (req, res) => {
+router.post("/users/me/logoutall", auth, async (req, res) => {
   // Log user out of all devices
   try {
-    req.user.tokens.splice(0, req.user.tokens.length)
-    await req.user.save()
-    res.send()
+    req.user.tokens.splice(0, req.user.tokens.length);
+    await req.user.save();
+    res.send();
   } catch (error) {
-    res.status(500).send(error)
+    res.status(500).send(error);
   }
-})
-
+});
 
 const checkToken = (req, res, next) => {
-  const header = req.headers['authorization'];
+  const header = req.headers["authorization"];
 
-  if (typeof header !== 'undefined') {
-    const bearer = header.split(' ');
+  if (typeof header !== "undefined") {
+    const bearer = header.split(" ");
     const token = bearer[1];
 
     req.token = token;
     next();
   } else {
     //If header is undefined return Forbidden (403)
-    res.sendStatus(403)
+    res.sendStatus(403);
   }
-}
+};
 
-module.exports = router
+module.exports = router;
