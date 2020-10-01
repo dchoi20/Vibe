@@ -30,11 +30,15 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#!">Login</a>
+            <a className="blue-text" href="#!">
+              Login
+            </a>
           </li>
           <li class="divider" tabindex="-1"></li>
           <li>
-            <a href="#!">About</a>
+            <a className="blue-text" href="#!">
+              About
+            </a>
           </li>
         </ul>
       </nav>
