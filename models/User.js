@@ -31,10 +31,18 @@ const userSchema = mongoose.Schema({
             required: true
         }
     }],
-    favImageURL: {
-        type: String,
-    }
+   
+    favImageURL: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Favorite"
+        }
+      ]
+
+    
 })
+
+
 
 userSchema.pre('save', async function (next) {
     // Hash the password before saving the user model
@@ -69,4 +77,4 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
 const User = mongoose.model('User', userSchema)
 
-module.exports = User
+module.exports = User;
