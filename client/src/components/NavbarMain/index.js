@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import SideNav from "../SideNav";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 
