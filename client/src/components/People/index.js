@@ -20,10 +20,10 @@ export default function People() {
   console.log(peopleState.people);
 
   return (
-    <div class="People">
+    <div className="People">
       {peopleState.people.map((person) => {
         return (
-          <li>
+          <li key={person.name}>
             <a href="#!">
               <p>{person.name}</p>
             </a>

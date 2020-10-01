@@ -37,30 +37,30 @@ export default function SideNav() {
           <a
             href="#"
             data-target="slide-out"
-            class=" left sidenav-trigger show-on-large"
+            className=" left sidenav-trigger show-on-large"
           >
-            <i class="material-icons">menu</i>
+            <i className="material-icons">menu</i>
           </a>
         </div>
       </nav>
-      <ul id="slide-out" class="sidenav">
+      <ul id="slide-out" className="sidenav">
         <li>
           <a href="#!">
             <h6 className="center-align">Hello, User</h6>
           </a>
         </li>
         <li>
-          <div class="divider"></div>
+          <div className="divider"></div>
         </li>
         <li>
           <a href="../Favorites">Your Collection</a>
         </li>
 
-        <div class="divider"></div>
+        <div className="divider"></div>
         <h6 className="center-align">Check out other users!</h6>
-        <li>
+        <ul>
           <People />
-        </li>
+        </ul>
       </ul>
     </div>
   );
