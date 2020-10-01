@@ -32,11 +32,7 @@ router.post("/users/login", async (req, res) => {
     res.status(400).send(error);
   }
 });
-// router.post("/users/me/favorite" , async (req,res) => {
-//   const favImageURL = req.body.favImageURL;
 
-
-// })
 router.get('/users/me', auth, async (req, res) => {
   // View logged in users
   res.send(req.user)
@@ -48,13 +44,6 @@ router.get('/users', auth, async (req, res) => {
 
 
 
-
-// router.get("/users/all", async (req, res) => {
-//  try{  const allUsers= res.send(req.user);
-//   res.json(allUsers)
-//  }catch{
-//    console.log("broken")
-//  }})
 router.get('/users/all', async (req, res) => {
   User.find().then((data) => {
     res.json(data)
@@ -64,66 +53,32 @@ router.get('/users/all', async (req, res) => {
 })
 
 
-router.post("/users/favorite/", ({body}, res) => {
-
- 
-
-
+router.post("/users/favorite/",  auth , ({user,body}, res) => {
+  // console.log(body)
+//  console.log("Hello World")
+//joining two collection in a database
+  // res.send("hellow")
+  // console.log(user)
   Favorite.create(body)
-    .then(({ _id })=>User.findOneAndUpdate({} , {$push: {favImage_ID: _id }} , {new: true}))
+    .then(({ _id })=>User.findOneAndUpdate({_id: user._id} , {$push: {favImageURL: _id }} , {new: true}))
     .then(data => {
       res.json(data)
     })
     .catch(err => res.status(422).json(err));
 });
-
-router.get("/users/favorites/", auth, (req, res) => {
-  User.find({})
+// retrieving data from one collection into the other
+router.get("/users/favorite/", auth, (req, res) => {
+  console.log("test GET")
+  User.find({_id: req.user._id})
     .populate("favImageURL")
     .then(data => {
-      res.json(data);
+      console.log(data)
+      res.json(data)
     })
     .catch(err => {
       res.json(err);
     });
 });
-
-// User.aggregate([
-//   {
-//     $lookup: {
-//       from: "favorites",
-//       localField: "name",
-//       foreignField: "name",
-//       as: "favorites_collection"
-//     }}])
-
-
-// Favorite.aggregate([
-//   {
-//     $lookup: {
-//       from: "users",
-//       localField: "user",
-//       foreignField: "name",
-//       as: "users_collection"
-//     }
-
-  // },
-  // {
-  //   $unwind: "$users_collection"
-  // },
-  // {
-  //   $match: {
-  //     $and: [{ "name": "evan" }]
-  //   }
-  // },
-  // {
-  //   $project: {
-      
-  //     email: "$users_collection.email",
-  //   }
-//   }
-// ])
-
 
 
 

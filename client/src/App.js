@@ -12,6 +12,7 @@ import Chatroom from "./components/Chatroom/index";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import People from "./components/People";
+import Favorites from "./components/Favorites/index"
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <ProtectedRoute path="/chatlogin" component={Chatlogin} />
           <ProtectedRoute path="/chatroom" component={Chatroom} />
           <ProtectedRoute path="/people" component={People} />
+          <Route  path="/favorites" component={Favorites} />
           <Route exact path="/">
             <NavbarLogin />
             <Hero />

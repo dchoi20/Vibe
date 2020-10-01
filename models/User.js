@@ -33,6 +33,7 @@ const userSchema = mongoose.Schema({
     }],
    
     favImageURL: [
+       
         {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Favorite"
