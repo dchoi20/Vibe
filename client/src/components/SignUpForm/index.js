@@ -23,7 +23,7 @@ export default function SignUpForm() {
     });
   }
   return (
-    <div className="formz">
+    <div className="formz" id="loginForm">
       <div id="signupForm">
         <div className="container">
           <div className=" row">
@@ -74,9 +74,17 @@ export default function SignUpForm() {
                 Sign Up
               </button>
             </form>
-          <div className="col s2"></div>
-              <LoginForm />
-            
+            <div className="col s2"></div>
+            {/* <LoginForm /> */}
+            <div className="col s5 formPosition center-align signupText">
+              <h5>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                <br /> <h6 className="center-align">Dane Edwards</h6>
+              </h5>
+            </div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a className="blue-text" href="#!">
+            <a className="blue-text" href="#loginForm">
               Login
             </a>
           </li>
