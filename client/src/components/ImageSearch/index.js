@@ -30,18 +30,21 @@ export default function ImageSearch() {
   });
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="search"
-          name="search"
-          placeholder="Search for More Images"
-        />
-        <input type="submit" value="Submit"></input>
-      </form>
+    <div className="container">
+      <div className="searchStyle">
+        <form onSubmit={onSubmit}>
+          <input
+            className="col m6"
+            type="search"
+            name="search"
+            placeholder="Search for More Images"
+          />
+          <input className="btn blue" type="submit" value="Submit"></input>
+        </form>
+      </div>
 
-      {searchImagesState.searchImages.map((image) => (
-        <div className="row">
+      <div className="row">
+        {searchImagesState.searchImages.map((image) => (
           <div className="col s12 m6">
             <div className="card">
               <div className="card-image">
@@ -71,8 +74,8 @@ export default function ImageSearch() {
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
