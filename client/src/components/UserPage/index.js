@@ -1,10 +1,6 @@
 import React from "react";
 import "./style.css";
-import NavbarMain from "../NavbarMain";
 import SideNav from "../SideNav";
-import M from "materialize-css/dist/js/materialize.min.js";
-import People from "../People";
-import { Nav } from "react-bootstrap";
 
 export default function UserPage() {
   return (

@@ -9,10 +9,10 @@ export default function ImageSearch() {
     searchImages: [],
   });
   const config = {
-    headers : {
-      Authorization: localStorage.token
-    }}
-
+    headers: {
+      Authorization: localStorage.token,
+    },
+  };
 
   function onSubmit(e) {
     e.preventDefault();
@@ -28,7 +28,6 @@ export default function ImageSearch() {
     });
   }
 
-
   useEffect(() => {
     let elems = document.querySelectorAll(".materialboxed");
     M.Materialbox.init(elems);
@@ -37,21 +36,22 @@ export default function ImageSearch() {
   function likeImage(e, image, i) {
     // Save to database
     const favorite = image.cover_photo.urls.regular;
-    console.log(favorite)
+    console.log(favorite);
     console.log(image.cover_photo.urls.regular);
 
-    axios.post("/users/favorite/", { favImageURL: favorite }, config).then((res) => {
-      console.log(favorite)
-      setSearchImagesState({
-        ...searchImagesState,
-        searchImages: searchImagesState.searchImages.map((image, j) => {
-          if (i === j) return { ...image, isLiked: !image.isLiked };
-          return image;
-        }),
-      });
-    })
-      .catch((err) => console.log(err))
-      
+    axios
+      .post("/users/favorite/", { favImageURL: favorite }, config)
+      .then((res) => {
+        console.log(favorite);
+        setSearchImagesState({
+          ...searchImagesState,
+          searchImages: searchImagesState.searchImages.map((image, j) => {
+            if (i === j) return { ...image, isLiked: !image.isLiked };
+            return image;
+          }),
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -70,7 +70,7 @@ export default function ImageSearch() {
 
       <div className="row">
         {searchImagesState.searchImages.map((image, i) => (
-          <div className="col s12 m6">
+          <div className="col s12 m6" key={image.id}>
             <div className="card">
               <div className="card-image">
                 <img
