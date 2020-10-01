@@ -8,8 +8,6 @@ export default function ImageSearch() {
     searchImages: [],
   });
 
-  const [like, setLike] = useState(false);
-
   function onSubmit(e) {
     e.preventDefault();
 
