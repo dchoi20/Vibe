@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import Logo from "../assets/Vibe_Logo_White.png";
 import AltLogo from "../assets/Vibe_Alt_Logo_White.png";
 import "./style.css";
-import axios from "axios";
+
 export default function Navbar() {
   useEffect(() => {
     var elems = document.querySelectorAll(".dropdown-trigger");

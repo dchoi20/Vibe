@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
-import M from "materialize-css/dist/js/materialize.min.js";
 
 export default function People() {
   const [peopleState, setPeopleState] = useState({
