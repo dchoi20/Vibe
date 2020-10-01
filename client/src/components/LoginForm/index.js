@@ -37,7 +37,7 @@ export default function LoginForm() {
       <div id="signupForm">
         <div className="container">
           <div className=" row">
-            <div className="col s5 formPosition center-align signupText">
+            <div className="col s5 formPosition center-align signupText blue-text darken-1">
               <h5>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
