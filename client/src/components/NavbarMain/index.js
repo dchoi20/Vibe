@@ -22,7 +22,6 @@ export default function Navbar() {
         <a href="#" className="brand-logo center">
           VIBE
         </a>
-
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <a
@@ -37,7 +36,6 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      
     </nav>
   );
 }
