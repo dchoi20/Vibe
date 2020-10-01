@@ -7,9 +7,15 @@
 
 .heroMargin {
   color: white;
+  margin-top: 6rem !important;
+}
+.welcomeMargin {
+  color: white;
   margin-top: 15rem !important;
 }
 
 .heroText {
+  
+  font-weight: 300;
   color: white;
 }

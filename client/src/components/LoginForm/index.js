@@ -33,41 +33,59 @@ export default function LoginForm() {
   }
 
   return (
-    <form className="formPosition col s5">
-      <h6>Already a Member?</h6>
-      <p>Login!</p>
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            id="email"
-            type="email"
-            className="validate"
-            ref={emailInput}
-          />
-          <label for="email">Email</label>
+    <div className="formzz">
+      <div id="signupForm">
+        <div className="container">
+          <div className=" row">
+            <div className="col s5 formPosition center-align signupText">
+              <h5>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                <br /> <h6 className="center-align">Dane Edwards</h6>
+              </h5>
+            </div>
+            <div className="col s2"></div>
+            <form className="formPosition col s5">
+              <h6>Already a Member?</h6>
+              <p>Login!</p>
+              <div className="row">
+                <div className="input-field col s12">
+                  <input
+                    id="email"
+                    type="email"
+                    className="validate"
+                    ref={emailInput}
+                  />
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div className="row">
+                <div className="input-field col s12">
+                  <input
+                    id="password"
+                    type="password"
+                    className="validate"
+                    ref={passwordInput}
+                  />
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <button
+                onClick={(event) => {
+                  login(event);
+                }}
+                class="btn waves-effect waves-light blue"
+                type="submit"
+                name="action"
+              >
+                Log In
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            id="password"
-            type="password"
-            className="validate"
-            ref={passwordInput}
-          />
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <button
-        onClick={(event) => {
-          login(event);
-        }}
-        class="btn waves-effect waves-light blue"
-        type="submit"
-        name="action"
-      >
-        Log In
-      </button>
-    </form>
+    </div>
   );
 }

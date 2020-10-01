@@ -1,29 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import M from "materialize-css/dist/js/materialize.min.js";
+import Logo from "../assets/Vibe_Logo_White.png";
+import AltLogo from "../assets/Vibe_Alt_Logo_White.png";
 import "./style.css";
 import axios from "axios";
-
 export default function Navbar() {
-  function logOut(event) {
-    event.preventDefault();
-    localStorage.removeItem("token");
-    window.location.replace(`/`);
-  }
+  useEffect(() => {
+    var elems = document.querySelectorAll(".dropdown-trigger");
+    M.Dropdown.init(elems);
+  });
   return (
-    <nav className="black">
-      <div className="nav-wrapper">
-        <a href="#" className="brand-logo center">
-          VIBE
-        </a>
-        <ul id="nav-mobile" className="left hide-on-med-and-down">
+    <div>
+      <nav className="black">
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo center">
+            <img className="Logo" alt="VIBE" src={Logo} />
+            <img className="Logo" alt="VIBE" src={AltLogo} />
+          </a>
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li>
+              <a class="dropdown-trigger" data-target="dropdown1">
+                <i class="material-icons small">menu</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul id="dropdown1" class="dropdown-content">
           <li>
-            <a href="#signupForm">Sign Up</a>
+            <a className="blue-text" href="#signupForm">
+              Sign Up
+            </a>
           </li>
           <li>
-            <a href="#loginForm">Login</a>
+            <a className="blue-text" href="#loginForm">
+              Login
+            </a>
+          </li>
+          <li class="divider" tabindex="-1"></li>
+          <li>
+            <a className="blue-text" href="#!">
+              About
+            </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
