@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import ImageSearch from "../ImageSearch";
-import NavbarMain from "../NavbarMain";
+import SideNav from "../SideNav";
 import Footer from "../Footer";
 
 import { Form, Button } from "react-bootstrap";
@@ -34,7 +34,10 @@ export default function Main() {
 
   return (
     <div>
-      <NavbarMain />
+      <SideNav />
+      <div>
+        <h5 className="center-align">Daily Featured Images</h5>
+      </div>
       <div className="carousel">
         {imagesState.images.map((image) => (
           <img
