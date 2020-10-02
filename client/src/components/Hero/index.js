@@ -15,7 +15,7 @@ export default function Hero() {
               start creating your own collection of beautiful photography and
               connect with other users.
             </h4>
-            <a class="waves-effect waves-dark btn blue" href="#signupForm">
+            <a className="waves-effect waves-dark btn blue" href="#signupForm">
               Sign Up!
             </a>
             <div className="heroText"></div>

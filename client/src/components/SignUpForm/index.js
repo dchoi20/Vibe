@@ -38,7 +38,7 @@ export default function SignUpForm() {
                     className="validate"
                     ref={nameInput}
                   />
-                  <label for="name">Name</label>
+                  <label htmlFor="name">Name</label>
                 </div>
               </div>
               <div className="row">
@@ -49,7 +49,7 @@ export default function SignUpForm() {
                     className="validate"
                     ref={emailInput}
                   />
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
@@ -60,14 +60,14 @@ export default function SignUpForm() {
                     className="validate"
                     ref={passwordInput}
                   />
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                 </div>
               </div>
               <button
                 onClick={(event) => {
                   signUp(event);
                 }}
-                class="btn waves-effect waves-light blue"
+                className="btn waves-effect waves-light blue"
                 type="submit"
                 name="action"
               >
@@ -77,13 +77,13 @@ export default function SignUpForm() {
             <div className="col s2"></div>
             {/* <LoginForm /> */}
             <div className="col s5 formPosition center-align signupText blue-text darken-1">
-              <h5>
+              <blockquote>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                <br /> <h6 className="center-align">Dane Edwards</h6>
-              </h5>
+                <br /> <cite className="center-align">Dane Edwards</cite>
+              </blockquote>
             </div>
           </div>
         </div>
