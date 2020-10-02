@@ -1,6 +1,7 @@
 const express = require("express");
 const Axios = require("axios");
 const userRouter = require("./routers/user");
+const path = require("path");
 
 const PORT = process.env.PORT || 3001;
 
@@ -37,6 +38,10 @@ app.get("/searchimages/:query", (req, res) => {
   ).then(({ data }) => {
     res.send(data);
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 // Start the API server
