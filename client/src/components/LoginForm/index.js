@@ -34,10 +34,10 @@ export default function LoginForm() {
 
   return (
     <div className="formzz">
-      <div id="signupForm">
+      <div id="loginForm">
         <div className="container">
           <div className=" row">
-            <div className="col s5 formPosition center-align signupText blue-text darken-1">
+            <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -46,8 +46,8 @@ export default function LoginForm() {
                 <br /> <cite className="center-align">Dane Edwards</cite>
               </blockquote>
             </div>
-            <div className="col s2"></div>
-            <form className="formPosition col s5">
+            <div className="col m2 s12"></div>
+            <form className="formPosition col m5 s12">
               <h6>Already a Member?</h6>
               <p>Login!</p>
               <div className="row">
