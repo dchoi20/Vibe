@@ -23,11 +23,11 @@ export default function SignUpForm() {
     });
   }
   return (
-    <div className="formz" id="loginForm">
-      <div id="signupForm">
+    <div className="formz" id="signupForm">
+      <div>
         <div className="container">
           <div className=" row">
-            <form className="formPosition col s5">
+            <form className="formPosition col m5 s12">
               <h6>New User?</h6>
               <p>Sign Up Here</p>
               <div className="row">
@@ -74,9 +74,9 @@ export default function SignUpForm() {
                 Sign Up
               </button>
             </form>
-            <div className="col s2"></div>
+            <div className="col m2 s12"></div>
             {/* <LoginForm /> */}
-            <div className="col s5 formPosition center-align signupText blue-text darken-1">
+            <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.

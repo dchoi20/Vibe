@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-import FavoriteRender from "../FavoriteRender/index"
+import "./style.css";
+import FavoriteRender from "../FavoriteRender/index";
 
 export default function Favorites() {
   const [userFavorite, setUserFavorite] = useState({
@@ -25,11 +25,14 @@ export default function Favorites() {
           collection: res.data,
         });
       })
-     
+
       .catch((err) => console.log(err));
   }, []);
 
   return (
-      < FavoriteRender userFavorite={userFavorite} />
+    <div>
+      <FavoriteRender userFavorite={userFavorite} />
+    </div>
+    
   );
 }
