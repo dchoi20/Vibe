@@ -67,7 +67,7 @@ export default function SideNav() {
           <a href="/favorites">My Collection</a>
         </li>
         <li>
-          <a href="/feature">Featured Images</a>
+          <a href="/feature"> Daily Featured Images</a>
         </li>
         <li>
           <a href="/home">Search Images</a>

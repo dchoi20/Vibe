@@ -39,11 +39,8 @@ export default function LoginForm() {
           <div className=" row">
             <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                <br /> <cite className="center-align">Dane Edwards</cite>
+              “Only photography has been able to divide human life into a series of moments, each of them has the value of a complete existence.”
+                <br /> <cite className="center-align">Eadweard Muybridge</cite>
               </blockquote>
             </div>
             <div className="col m2 s12"></div>

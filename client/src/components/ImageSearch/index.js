@@ -65,12 +65,8 @@ export default function ImageSearch() {
             <div className="card-content">
               <div className="row">
                 <blockquote className="col m6 s12 center">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua."
-                  <br /> <cite className="center-align">Dane Edwards</cite>
+                  "Photography is the story I fail to put into words..."
+                  <br /> <cite className="center-align">Destin Sparks</cite>
                 </blockquote>
                 <form className="col m6 s12" onSubmit={onSubmit}>
                   <input
@@ -105,7 +101,7 @@ export default function ImageSearch() {
                   <a
                     className={
                       image.isLiked
-                        ? "btn-floating halfway-fab waves-effect waves-light red"
+                        ? "btn-floating halfway-fab waves-effect waves-light blue"
                         : "btn-floating halfway-fab waves-effect waves-light black"
                     }
                     onClick={(e) => likeImage(e, image, i)}
@@ -113,7 +109,7 @@ export default function ImageSearch() {
                     <i className="material-icons">favorite</i>
                   </a>
                 </div>
-                <div className="card-content">
+                <div className="card-content center">
                   <p>{image.cover_photo.alt_description}</p>
                 </div>
               </div>
