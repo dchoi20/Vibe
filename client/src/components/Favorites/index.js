@@ -32,10 +32,17 @@ export default function Favorites() {
     <div>
       <SideNav />
       <div className="container">
-        <div className="row collectionStyle">
-          {userFavorite.collection.map((image) => {
-            return <img src={image.favImageURL} alt={image._id} key={key++} />;
-          })}
+        <div className="row">
+          <div className="col m1"></div>
+          <div className="card favoritesCard">
+            <div className="card-image">
+              {userFavorite.collection.map((image) => {
+                return (
+                  <img src={image.favImageURL} alt={image._id} key={key++} />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
