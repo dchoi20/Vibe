@@ -73,6 +73,15 @@ export default function SignUpForm() {
               >
                 Sign Up
               </button>
+              <div className="password-requirement">
+
+              <ul>Password Requirement
+                <li>Minimum of 8 Characters</li>
+                <li>At least 1 uppercase letter</li>
+                <li>At least 1 lowercase letter</li>
+                <li>At least 1 special Character</li>
+              </ul>
+              </div>
             </form>
             <div className="col m2 s12"></div>
             {/* <LoginForm /> */}
