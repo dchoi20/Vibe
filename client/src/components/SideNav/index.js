@@ -19,7 +19,7 @@ export default function SideNav() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo center">
+          <a href="/home" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
           </a>
@@ -50,13 +50,13 @@ export default function SideNav() {
       <ul id="slide-out" className="sidenav">
         <li>
           <div className="user-view">
-            <a href="#user" className="center-align">
+            <a href="/home" className="center-align">
               <img className="circle" src={SideNavLogo} />
             </a>
           </div>
         </li>
         <li>
-          <a href="#!">
+          <a href="/favorites">
             <h6>Hello, User</h6>
           </a>
         </li>
