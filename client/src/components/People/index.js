@@ -9,7 +9,7 @@ export default function People() {
 
   useEffect(() => {
     axios.get("users/all").then((res) => {
-      console.log(res.data[0]._id)
+      // console.log(res.data._id)
       setPeopleState({
         ...peopleState,
         people: res.data,
