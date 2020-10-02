@@ -22,7 +22,7 @@ export default function OtherFavorites() {
   useEffect(() => {
     console.log(id);
     axios
-      .get("/others/" + id)
+      .get("/api/others/" + id)
 
       .then((res) => {
         console.log(res.data);
