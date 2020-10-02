@@ -86,10 +86,10 @@ router.get("/users/favorite/", auth, (req, res) => {
 });
 // var mongoose = require('mongoose');
 // var id = new mongoose.Types.ObjectId(stringId);
-router.get("/others/:id", (req, res) => {
-//  const id = req.params.id
+router.get("/api/others/:id", (req, res) => {
+  //  const id = req.params.id
   console.log("test GET");
-  User.findOne({_id : req.params.id})
+  User.findOne({ _id: req.params.id })
     .populate("favImageURL")
     .then((data) => {
       console.log(data);

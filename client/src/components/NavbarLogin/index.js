@@ -14,34 +14,34 @@ export default function Navbar() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo center">
+          <Link to="#" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
-          </a>
+          </Link>
           <ul id="nav-mobile" className="left">
             <li>
-              <a class="dropdown-trigger" data-target="dropdown1">
+              <Link class="dropdown-trigger" data-target="dropdown1">
                 <i class="material-icons small">menu</i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <ul id="dropdown1" class="dropdown-content">
           <li>
-            <a className="blue-text" href="#signupForm">
+            <Link className="blue-text" to="#signupForm">
               Sign Up
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="blue-text" href="#loginForm">
+            <Link className="blue-text" to="#loginForm">
               Login
-            </a>
+            </Link>
           </li>
           <li class="divider" tabindex="-1"></li>
           <li>
-            <a className="blue-text" href="#!">
+            <Link className="blue-text" to="#!">
               About
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
