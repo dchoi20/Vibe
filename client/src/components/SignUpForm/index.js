@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import LoginForm from "../LoginForm";
 import "./style.css";
 import axios from "axios";
 
@@ -26,7 +25,7 @@ export default function SignUpForm() {
     <div className="formz" id="signupForm">
       <div>
         <div className="container">
-          <div className=" row">
+          <div className="row">
             <form className="formPosition col m5 s12">
               <h6>New User?</h6>
               <p>Sign Up Here</p>
@@ -44,23 +43,23 @@ export default function SignUpForm() {
               <div className="row">
                 <div className="input-field col s12">
                   <input
-                    id="email"
+                    id="signUpEmail"
                     type="email"
                     className="validate"
                     ref={emailInput}
                   />
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="signUpEmail">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <input
-                    id="password"
+                    id="signUpPassword"
                     type="password"
                     className="validate"
                     ref={passwordInput}
                   />
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="signUpPassword">Password</label>
                 </div>
               </div>
               <button
@@ -73,6 +72,15 @@ export default function SignUpForm() {
               >
                 Sign Up
               </button>
+              <div className="password-requirement">
+
+              <ul>Password Requirement
+                <li>Minimum of 8 Characters</li>
+                <li>At least 1 uppercase letter</li>
+                <li>At least 1 lowercase letter</li>
+                <li>At least 1 special Character</li>
+              </ul>
+              </div>
             </form>
             <div className="col m2 s12"></div>
             {/* <LoginForm /> */}
