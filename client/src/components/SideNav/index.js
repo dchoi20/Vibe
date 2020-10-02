@@ -50,13 +50,13 @@ export default function SideNav() {
       <ul id="slide-out" className="sidenav">
         <li>
           <div className="user-view">
-            <a href="#user" className="center-align">
+            <a href="/home" className="center-align">
               <img className="circle" src={SideNavLogo} />
             </a>
           </div>
         </li>
         <li>
-          <a href="/home">
+          <a href="/favorites">
             <h6>Hello, User</h6>
           </a>
         </li>
