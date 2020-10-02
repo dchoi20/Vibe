@@ -24,6 +24,7 @@ export default function App() {
           <ProtectedRoute path="/UserPage" component={UserPage} />
           <ProtectedRoute path="/people" component={People} />
           <ProtectedRoute path="/favorites" component={Favorites} />
+          <ProtectedRoute path="/feature" component={Feature} />
           <ProtectedRoute  path="/others/:id"  children={<OtherFavorites />}/>
           <Route  path="/">
             <NavbarLogin />
