@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SideNav from "../SideNav";
-import Footer from "../Footer";
 
+import FavoriteRender from "../FavoriteRender/index"
 
 export default function Favorites() {
   const [userFavorite, setUserFavorite] = useState({
@@ -20,7 +19,7 @@ export default function Favorites() {
     axios
       .get("/users/favorite/", config)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setUserFavorite({
           ...userFavorite,
           collection: res.data,
@@ -31,23 +30,6 @@ export default function Favorites() {
   }, []);
 
   return (
-    <div>
-      <SideNav />
-      <div className="container">
-        <div className="row">
-          <div className="col m1"></div>
-          <div className="card favoritesCard">
-            <div className="card-image">
-              {userFavorite.collection.map((image) => {
-                return (
-                  <img src={image.favImageURL} alt={image._id} key={key++} />
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </div>
+      < FavoriteRender userFavorite={userFavorite} />
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 import NavbarLogin from "./components/NavbarLogin";
 import Main from "./components/Main/index";
 import LoginForm from "./components/LoginForm";
@@ -13,6 +13,7 @@ import Favorites from "./components/Favorites/index";
 import OtherFavorites from "./components/OthersFavorites/index"
 
 export default function App() {
+  
   return (
     <Router>
       <div>
@@ -21,8 +22,8 @@ export default function App() {
           <ProtectedRoute exact={true} path="/home" component={Main} />
           <ProtectedRoute path="/UserPage" component={UserPage} />
           <ProtectedRoute path="/people" component={People} />
-          <Route path="/favorites" component={Favorites} />
-          <Route  path="/others" component={OtherFavorites}/>
+          <ProtectedRoute path="/favorites" component={Favorites} />
+          <ProtectedRoute  path="/others/:id"  children={<OtherFavorites />}/>
           <Route  path="/">
             <NavbarLogin />
             <Hero />

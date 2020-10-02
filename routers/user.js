@@ -84,16 +84,17 @@ router.get("/users/favorite/", auth, (req, res) => {
       res.json(err);
     });
 });
+// var mongoose = require('mongoose');
+// var id = new mongoose.Types.ObjectId(stringId);
 router.get("/others/:id", (req, res) => {
-  // const id = req.params.id
+//  const id = req.params.id
   console.log("test GET");
-  User.findOne({_id: req.user.id})
-  .populate("favImageURL")
-  .then((data) => {
-    console.log(data);
-    res.json(data.favImageURL);
-  })
-  console.log(_id)
+  User.findOne({_id : req.params.id})
+    .populate("favImageURL")
+    .then((data) => {
+      console.log(data);
+      res.json(data.favImageURL);
+    })
     .catch((err) => {
       res.json(err);
     });
