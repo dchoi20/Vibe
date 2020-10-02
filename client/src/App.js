@@ -10,7 +10,8 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import People from "./components/People";
 import Favorites from "./components/Favorites/index";
-import OtherFavorites from "./components/OthersFavorites/index"
+import OtherFavorites from "./components/OthersFavorites/index";
+import Feature from "./components/Feature";
 
 export default function App() {
   return (
@@ -21,9 +22,10 @@ export default function App() {
           <ProtectedRoute exact={true} path="/home" component={Main} />
           <ProtectedRoute path="/UserPage" component={UserPage} />
           <ProtectedRoute path="/people" component={People} />
+          <ProtectedRoute path="/feature" component={Feature} />
           <Route path="/favorites" component={Favorites} />
-          <Route  path="/others" component={OtherFavorites}/>
-          <Route  path="/">
+          <Route path="/others" component={OtherFavorites} />
+          <Route path="/">
             <NavbarLogin />
             <Hero />
             <LoginForm />
