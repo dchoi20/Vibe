@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SideNav from "../SideNav";
 import Footer from "../Footer";
+import Favorites from "../Favorites"
+// import Favorite from "../../../../models/Favorite";
 
 export default function OtherFavorites() {
-  const [userFavorite, setUserFavorite] = useState({
-    collection: [],
-  });
+  
 
   const config = {
     headers: {
@@ -14,30 +14,21 @@ export default function OtherFavorites() {
     },
   };
  
-  useEffect(() => {
-      const id = 
+ 
+      
     axios
-      .get("/others/", config)
+      .get("/others/:id", config)
+   
       .then((res) => {
-        console.log(res.data);
-        setUserFavorite({
-          ...userFavorite,
-          collection: res.data,
-        });
-      })
+        console.log(res)})
       .catch((err) => console.log(err));
-  }, []);
+
 
   return (
     <div>
       <SideNav />
-      <div className="container">
-        <div class="row collectionStyle">
-          {userFavorite.collection.map((image) => {
-            return <img src={image.favImageURL} alt={image._id} />;
-          })}
-        </div>
-      </div>
+     <h1></h1>
+     <Favorites />
       <Footer />
     </div>
   );

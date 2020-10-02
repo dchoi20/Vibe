@@ -24,7 +24,7 @@ export default function People() {
       {peopleState.people.map((person) => {
         return (
           <li key={person._id}>
-            <a href="/others">
+            <a href={`/others/${person._id}`}>
               <p>{person.name}</p>
             </a>
           </li>
