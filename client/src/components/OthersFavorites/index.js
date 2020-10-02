@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SideNav from "../SideNav";
 import Footer from "../Footer";
-import People from "../People"
+
 export default function OtherFavorites() {
   const [userFavorite, setUserFavorite] = useState({
     collection: [],
@@ -13,11 +13,11 @@ export default function OtherFavorites() {
       Authorization: localStorage.token,
     },
   };
-
+ 
   useEffect(() => {
-      const id = person._id;
+      const id = 
     axios
-      .get("/others/" + id + "favorite/", config)
+      .get("/others/", config)
       .then((res) => {
         console.log(res.data);
         setUserFavorite({

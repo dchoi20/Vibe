@@ -84,10 +84,10 @@ router.get("/users/favorite/", auth, (req, res) => {
       res.json(err);
     });
 });
-router.get("/others/:id/favorite/", (req, res) => {
-  const id = req.user._id
+router.get("/others/", (req, res) => {
+  // const id = req.user._id
   console.log("test GET");
-  User.findOne({_id: id })
+  User.findOne({})
     .populate("favImageURL")
     .then((data) => {
       console.log(data);
