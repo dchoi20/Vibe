@@ -3,6 +3,7 @@ import axios from "axios";
 import SideNav from "../SideNav";
 import Footer from "../Footer";
 
+
 export default function Favorites() {
   const [userFavorite, setUserFavorite] = useState({
     collection: [],
@@ -24,6 +25,7 @@ export default function Favorites() {
           collection: res.data,
         });
       })
+     
       .catch((err) => console.log(err));
   }, []);
 

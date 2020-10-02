@@ -85,15 +85,15 @@ router.get("/users/favorite/", auth, (req, res) => {
     });
 });
 router.get("/others/:id", (req, res) => {
- const id = req.params.id
- console.log(id)
+  // const id = req.params.id
   console.log("test GET");
-  User.findOne({_id : "5f760bc6521cf40944151f27"})
-    .populate("favImageURL")
-    .then((data) => {
-      console.log(data);
-      res.json(data.favImageURL);
-    })
+  User.findOne({_id: req.user.id})
+  .populate("favImageURL")
+  .then((data) => {
+    console.log(data);
+    res.json(data.favImageURL);
+  })
+  console.log(_id)
     .catch((err) => {
       res.json(err);
     });
