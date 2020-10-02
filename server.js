@@ -1,33 +1,8 @@
 const express = require("express");
 const Axios = require("axios");
 const userRouter = require("./routers/user");
-const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
-
-// SOCKET.IO
-
-const socketio = require("socket.io");
-const http = require("http");
-const { param } = require("./routers/user");
-
-const app = express();
-const server = http.createServer(app);
-const io = socketio(server);
-
-io.on("connection", (socket) => {
-  console.log("connection");
-
-  socket.emit("message", "welcome");
-
-  socket.broadcast.emit("message", "user has entered the chat");
-
-  socket.on("disconnect", () => {
-    io.emit("message", "user has left the chat");
-  });
-
-  socket.on("chatMessage", (msg) => io.emit("message", msg));
-});
 
 // const routes = require("./routes");
 require("dotenv").config();
@@ -35,6 +10,7 @@ require("./db/db");
 
 const { REACT_APP_API_KEY } = process.env;
 // Define middleware here
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(userRouter);
@@ -65,11 +41,6 @@ app.get("/searchimages/:query", (req, res) => {
 
 // Start the API server
 
-// app.listen(PORT, function () {
-//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-// });
-
-// Socket.io server
-server.listen(PORT, function () {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
