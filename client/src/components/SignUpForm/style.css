@@ -2,7 +2,7 @@ form {
   max-width: 60%;
 }
 .signupText {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 .formz {
   height: 100vh;
@@ -65,4 +65,8 @@ form {
 .input-field textarea.valid ~ .helper-text::after,
 .input-field textarea.valid:focus ~ .helper-text::after {
   color: #1e88e5;
+}
+
+blockquote {
+  border-left: 0px !important;
 }

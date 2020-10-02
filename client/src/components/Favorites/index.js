@@ -8,6 +8,7 @@ export default function Favorites() {
     collection: [],
   });
 
+  let key = 0;
   const config = {
     headers: {
       Authorization: localStorage.token,
@@ -31,12 +32,14 @@ export default function Favorites() {
     <div>
       <SideNav />
       <div className="container">
-        <div class="row">
+        <div className="row">
           <div className="col m1"></div>
           <div className="card favoritesCard">
             <div className="card-image">
               {userFavorite.collection.map((image) => {
-                return <img src={image.favImageURL} alt={image._id} />;
+                return (
+                  <img src={image.favImageURL} alt={image._id} key={key++} />
+                );
               })}
             </div>
           </div>

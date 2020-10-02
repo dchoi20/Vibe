@@ -13,6 +13,7 @@ export default function ImageSearch() {
       Authorization: localStorage.token,
     },
   };
+  let key = 0;
 
   function onSubmit(e) {
     e.preventDefault();
@@ -42,6 +43,7 @@ export default function ImageSearch() {
     axios
       .post("/users/favorite/", { favImageURL: favorite }, config)
       .then((res) => {
+        console.log(res);
         console.log(favorite);
         setSearchImagesState({
           ...searchImagesState,
@@ -80,7 +82,7 @@ export default function ImageSearch() {
         </div>
         <div className="row">
           {searchImagesState.searchImages.map((image, i) => (
-            <div className="col s12 m6">
+            <div className="col s12 m6" key={key++}>
               <div className="card">
                 <div className="card-image">
                   <img
