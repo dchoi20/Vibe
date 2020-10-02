@@ -78,11 +78,11 @@ export default function SignUpForm() {
             {/* <LoginForm /> */}
             <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                <br /> <cite className="center-align">Dane Edwards</cite>
+                “To me, photography is an art of observation. It’s about finding
+                something interesting in an ordinary place… I’ve found it has
+                little to do with the things you see and everything to do with
+                the way you see them.”
+                <br /> <cite className="center-align">Elliott Erwitt</cite>
               </blockquote>
             </div>
           </div>

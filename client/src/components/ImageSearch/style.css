@@ -10,6 +10,10 @@ h2 {
   margin-top: 5rem;
 }
 
+.card-content {
+  font-family: "Roboto Mono", monospace;
+}
+
 /* Inactive/Active Default input field color */
 .input-field input[type]:not([readonly]),
 .input-field input[type]:focus:not([readonly]),

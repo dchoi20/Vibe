@@ -3,7 +3,8 @@ import API from "../../utils/API";
 import M from "materialize-css/dist/js/materialize.min.js";
 import axios from "axios";
 import SideNav from "../SideNav";
-
+import Footer from "../Footer";
+import "./style.css";
 export default function Feature() {
   const [featureImage, setFeatureImage] = useState({
     feature: [],
@@ -54,32 +55,41 @@ export default function Feature() {
   return (
     <div>
       <SideNav />
-      <h1>Featured Images</h1>
-      {featureImage.feature.map((image, i) => {
-        return (
-          <div className="col s12 m6" key={image.id}>
-            <div className="card">
-              <div className="card-image">
-                <img className="materialboxed" src={image.urls.regular} />
+      <div className="container">
+        <h2 className="center-align">Daily Featured Images</h2>
+        <div className="row">
+          <div className="col m2"></div>
+          <div className="col m8">
+            {featureImage.feature.map((image, i) => {
+              return (
+                <div className="col s12 m12" key={image.id}>
+                  <div className="card">
+                    <div className="card-image">
+                      <img className="materialboxed" src={image.urls.regular} />
 
-                <a
-                  className={
-                    image.isLiked
-                      ? "btn-floating halfway-fab waves-effect waves-light red"
-                      : "btn-floating halfway-fab waves-effect waves-light black"
-                  }
-                  onClick={(e) => likeImage(e, image, i)}
-                >
-                  <i className="material-icons">favorite</i>
-                </a>
-              </div>
-              <div className="card-content">
-                <p>{image.alt_description}</p>
-              </div>
-            </div>
+                      <a
+                        className={
+                          image.isLiked
+                            ? "btn-floating halfway-fab waves-effect waves-light blue"
+                            : "btn-floating halfway-fab waves-effect waves-light black"
+                        }
+                        onClick={(e) => likeImage(e, image, i)}
+                      >
+                        <i className="material-icons">favorite</i>
+                      </a>
+                    </div>
+                    <div className="card-content center">
+                      <p>{image.alt_description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
+          <div className="col m2"></div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
