@@ -10,7 +10,8 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import People from "./components/People";
 import Favorites from "./components/Favorites/index";
-import OtherFavorites from "./components/OthersFavorites/index"
+import OtherFavorites from "./components/OthersFavorites/index";
+import Feature from "./components/Feature";
 
 export default function App() {
   
