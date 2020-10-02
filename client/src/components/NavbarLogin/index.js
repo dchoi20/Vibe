@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { a } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import Logo from "../assets/Vibe_Logo_White.png";
 import AltLogo from "../assets/Vibe_Alt_Logo_White.png";
@@ -14,34 +14,34 @@ export default function Navbar() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <Link to="#" className="brand-logo center">
+          <a href="#" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
-          </Link>
+          </a>
           <ul id="nav-mobile" className="left">
             <li>
-              <Link class="dropdown-trigger" data-target="dropdown1">
+              <a class="dropdown-trigger" data-target="dropdown1">
                 <i class="material-icons small">menu</i>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
         <ul id="dropdown1" class="dropdown-content">
           <li>
-            <Link className="blue-text" to="#signupForm">
+            <a className="blue-text" href="#signupForm">
               Sign Up
-            </Link>
+            </a>
           </li>
           <li>
-            <Link className="blue-text" to="#loginForm">
+            <a className="blue-text" href="#loginForm">
               Login
-            </Link>
+            </a>
           </li>
           <li class="divider" tabindex="-1"></li>
           <li>
-            <Link className="blue-text" to="#!">
+            <a className="blue-text" href="#!">
               About
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
