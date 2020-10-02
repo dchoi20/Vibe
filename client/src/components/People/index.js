@@ -8,8 +8,8 @@ export default function People() {
   });
 
   useEffect(() => {
-    axios.get("users/all").then((res) => {
-      // console.log(res.data._id)
+    axios.get("/users/all").then((res) => {
+      console.log(res.data);
       setPeopleState({
         ...peopleState,
         people: res.data,
@@ -33,5 +33,3 @@ export default function People() {
     </div>
   );
 }
-
-
