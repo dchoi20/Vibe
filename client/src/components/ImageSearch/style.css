@@ -1,18 +1,15 @@
 #searchStyle {
   margin-top: 10rem;
   min-height: 100vh;
-  justify-content: center !important;
 }
-#searchStyle, h2 {
-  
+#searchStyle,
+h2 {
   font-family: "Roboto Mono", monospace;
 }
 .searchForm {
   margin-top: 5rem;
 }
-.btnStyle {
-  margin-top: 10px;
-}
+
 /* Inactive/Active Default input field color */
 .input-field input[type]:not([readonly]),
 .input-field input[type]:focus:not([readonly]),

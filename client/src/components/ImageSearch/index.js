@@ -62,21 +62,33 @@ export default function ImageSearch() {
         <div className="row">
           <div className="card col m12">
             <h2 className="center-align">Start Exploring</h2>
-            <div className=" center-align searchForm">
-              <form className="" onSubmit={onSubmit}>
-                <input
-                  className="input-field col m12 s12"
-                  type="search"
-                  name="search"
-                  placeholder="Search for More Images"
-                />
+            <div className="card-content">
+              <div className="row">
+                <blockquote className="col m6 s12 center">
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua."
+                  <br /> <cite className="center-align">Dane Edwards</cite>
+                </blockquote>
+                <form className="col m6 s12" onSubmit={onSubmit}>
+                  <input
+                    className="input-field col m12 s12"
+                    type="search"
+                    name="search"
+                    placeholder="Search for More Images"
+                  />
 
-                <input
-                  className=" input-field btn black col m2 s4 btnStyle"
-                  type="submit"
-                  value="Search"
-                ></input>
-              </form>
+                  <input
+                    className=" input-field btn black col m3 s4 btnStyle"
+                    type="submit"
+                    value="Search"
+                  ></input>
+                </form>
+
+                <div className="col m1"></div>
+              </div>
             </div>
           </div>
         </div>
