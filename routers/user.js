@@ -71,10 +71,23 @@ router.post("/users/favorite/", auth, ({ user, body }, res) => {
     })
     .catch((err) => res.status(422).json(err));
 });
-// retrieving data from one collection into the other
+// retrieving data from other Users
 router.get("/users/favorite/", auth, (req, res) => {
   console.log("test GET");
   User.findOne({ _id: req.user._id })
+    .populate("favImageURL")
+    .then((data) => {
+      console.log(data);
+      res.json(data.favImageURL);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+router.get("/others/:id/favorite/", (req, res) => {
+  const id = req.user._id
+  console.log("test GET");
+  User.findOne({_id: id })
     .populate("favImageURL")
     .then((data) => {
       console.log(data);
