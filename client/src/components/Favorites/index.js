@@ -33,7 +33,7 @@ export default function Favorites() {
       <div className="container">
         <div class="row">
           <div className="col m1"></div>
-          <div className="card">
+          <div className="card favoritesCard">
             <div className="card-image">
               {userFavorite.collection.map((image) => {
                 return <img src={image.favImageURL} alt={image._id} />;

@@ -57,27 +57,26 @@ export default function ImageSearch() {
   return (
     <div className="container">
       <div id="searchStyle">
-        <h2 className="center-align">Start Exploring</h2>
         <div className="row">
-          
-          
-          <div className=" center-align searchForm">
-            <form className=" center-align col m12" onSubmit={onSubmit}>
-              <input
-                className="input-field col m12 s12"
-                type="search"
-                name="search"
-                placeholder="Search for More Images"
-              />
+          <div className="card col m12">
+            <h2 className="center-align">Start Exploring</h2>
+            <div className=" center-align searchForm">
+              <form className="" onSubmit={onSubmit}>
+                <input
+                  className="input-field col m12 s12"
+                  type="search"
+                  name="search"
+                  placeholder="Search for More Images"
+                />
 
-              <input
-                className=" input-field btn black col m2 s4 btnStyle"
-                type="submit"
-                value="Search"
-              ></input>
-            </form>
+                <input
+                  className=" input-field btn black col m2 s4 btnStyle"
+                  type="submit"
+                  value="Search"
+                ></input>
+              </form>
+            </div>
           </div>
-         
         </div>
         <div className="row">
           {searchImagesState.searchImages.map((image, i) => (
