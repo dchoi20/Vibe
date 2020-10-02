@@ -26,7 +26,7 @@ export default function SignUpForm() {
     <div className="formz" id="signupForm">
       <div>
         <div className="container">
-          <div className=" row">
+          <div className="row">
             <form className="formPosition col m5 s12">
               <h6>New User?</h6>
               <p>Sign Up Here</p>
@@ -44,23 +44,23 @@ export default function SignUpForm() {
               <div className="row">
                 <div className="input-field col s12">
                   <input
-                    id="email"
+                    id="signUpEmail"
                     type="email"
                     className="validate"
                     ref={emailInput}
                   />
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="signUpEmail">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <input
-                    id="password"
+                    id="signUpPassword"
                     type="password"
                     className="validate"
                     ref={passwordInput}
                   />
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="signUpPassword">Password</label>
                 </div>
               </div>
               <button
