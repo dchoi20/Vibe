@@ -57,20 +57,20 @@ export default function SideNav() {
         </li>
         <li>
           <a href="/favorites">
-            <h6>Hello, User</h6>
+            <h4>Welcome</h4>
           </a>
         </li>
         <li>
           <div className="divider"></div>
         </li>
         <li>
-          <a href="/favorites">Your Collection</a>
+          <a href="/favorites">My Collection</a>
         </li>
         <li>
           <a href="/feature">Featured Images</a>
         </li>
         <li>
-          <a href="#searchStyle">Search Images</a>
+          <a href="/home">Search Images</a>
         </li>
 
         <div className="divider"></div>
