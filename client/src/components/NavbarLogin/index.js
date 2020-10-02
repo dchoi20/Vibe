@@ -19,13 +19,13 @@ export default function Navbar() {
           </a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li>
-              <a class="dropdown-trigger" data-target="dropdown1">
-                <i class="material-icons small">menu</i>
+              <a className="dropdown-trigger" data-target="dropdown1">
+                <i className="material-icons small">menu</i>
               </a>
             </li>
           </ul>
         </div>
-        <ul id="dropdown1" class="dropdown-content">
+        <ul id="dropdown1" className="dropdown-content">
           <li>
             <a className="blue-text" href="#signupForm">
               Sign Up
@@ -36,7 +36,7 @@ export default function Navbar() {
               Login
             </a>
           </li>
-          <li class="divider" tabindex="-1"></li>
+          <li className="divider" tabIndex="-1"></li>
           <li>
             <a className="blue-text" href="#!">
               About

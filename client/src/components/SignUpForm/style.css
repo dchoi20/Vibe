@@ -2,7 +2,7 @@ form {
   max-width: 60%;
 }
 .signupText {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 .formz {
   height: 100vh;
@@ -14,30 +14,34 @@ form {
 .formPosition {
   margin-top: 10rem;
 }
- /* label color */
- .input-field label {
+/* label color */
+.input-field label {
   color: rgb(255, 255, 255);
 }
 /* label focus color */
-.input-field input[type=text]:focus + label {
+.input-field input[type="text"]:focus + label {
   color: #000;
 }
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.input-field input[type="text"]:focus {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
 }
 /* valid color */
-.input-field input[type=text].valid {
+.input-field input[type="text"].valid {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
 }
 /* invalid color */
-.input-field input[type=text].invalid {
+.input-field input[type="text"].invalid {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
   color: #000;
+}
+
+blockquote {
+  border-left: 0px !important;
 }
