@@ -13,7 +13,7 @@ export default function Main() {
 
   useEffect(() => {
     API.getImages().then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setImagesState({
         ...imagesState,
         images: res.data,
@@ -22,7 +22,7 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
-    console.log("I was called!");
+    // console.log("I was called!");
     if (imagesState.images.length > 0) {
       let elems = document.querySelectorAll(".carousel");
 

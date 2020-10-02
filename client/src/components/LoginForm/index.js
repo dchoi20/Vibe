@@ -11,6 +11,7 @@ export default function LoginForm() {
       email: emailInput.current.value,
       password: passwordInput.current.value,
     };
+   
 
     console.log(emailInput);
     console.log(passwordInput);

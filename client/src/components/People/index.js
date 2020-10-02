@@ -9,6 +9,7 @@ export default function People() {
 
   useEffect(() => {
     axios.get("users/all").then((res) => {
+      console.log(res.data[0]._id)
       setPeopleState({
         ...peopleState,
         people: res.data,
@@ -16,14 +17,14 @@ export default function People() {
     });
   }, []);
 
-  console.log(peopleState.people);
+  // console.log(peopleState.people);
 
   return (
     <div className="People">
       {peopleState.people.map((person) => {
         return (
-          <li key={person.name}>
-            <a href="#!">
+          <li key={person._id}>
+            <a href={`/others/${person._id}`}>
               <p>{person.name}</p>
             </a>
           </li>
@@ -32,3 +33,5 @@ export default function People() {
     </div>
   );
 }
+
+
