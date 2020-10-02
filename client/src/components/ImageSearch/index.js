@@ -20,7 +20,7 @@ export default function ImageSearch() {
     let query = e.target.search.value;
 
     API.searchImages(query).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setSearchImagesState({
         ...searchImagesState,
         searchImages: res.data.results,
