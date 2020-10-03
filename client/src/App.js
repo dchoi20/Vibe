@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavbarLogin from "./components/NavbarLogin";
 import Main from "./components/Main/index";
 import LoginForm from "./components/LoginForm";
-import UserPage from "./components/UserPage";
 import SignUpForm from "./components/SignUpForm";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Hero from "./components/Hero";
@@ -14,19 +13,17 @@ import OtherFavorites from "./components/OthersFavorites/index";
 import Feature from "./components/Feature";
 
 export default function App() {
-  
   return (
     <Router>
       <div>
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <ProtectedRoute exact={true} path="/home" component={Main} />
-          <ProtectedRoute path="/UserPage" component={UserPage} />
           <ProtectedRoute path="/people" component={People} />
           <ProtectedRoute path="/favorites" component={Favorites} />
           <ProtectedRoute path="/feature" component={Feature} />
-          <ProtectedRoute  path="/others/:id"  children={<OtherFavorites />}/>
-          <Route  path="/">
+          <ProtectedRoute path="/others/:id" children={<OtherFavorites />} />
+          <Route path="/">
             <NavbarLogin />
             <Hero />
             <LoginForm />
