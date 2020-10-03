@@ -5,7 +5,6 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3001;
 
-// const routes = require("./routes");
 require("dotenv").config();
 require("./db/db");
 
@@ -22,7 +21,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(routes);
 
 app.get("/images", (req, res) => {
   Axios.get(

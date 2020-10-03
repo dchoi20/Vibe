@@ -18,7 +18,6 @@ export default function Feature() {
 
   useEffect(() => {
     API.getImages().then((res) => {
-      console.log(res.data);
       setFeatureImage({
         ...featureImage,
         feature: res.data,
@@ -34,13 +33,10 @@ export default function Feature() {
   function likeImage(e, image, i) {
     // Save to database
     const favorite = image.urls.regular;
-    console.log(favorite);
 
     axios
       .post("/users/favorite/", { favImageURL: favorite }, config)
       .then((res) => {
-        console.log(res);
-        console.log(favorite);
         setFeatureImage({
           ...featureImage,
           feature: featureImage.feature.map((image, j) => {

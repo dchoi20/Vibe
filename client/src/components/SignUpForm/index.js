@@ -13,9 +13,7 @@ export default function SignUpForm() {
       password: passwordInput.current.value,
       email: emailInput.current.value,
     };
-    console.log(nameInput);
-    console.log(emailInput);
-    console.log(passwordInput);
+
     axios.post("users/signup", user).then((res) => {
       console.log(res);
       console.log(res.data);
@@ -73,17 +71,16 @@ export default function SignUpForm() {
                 Sign Up
               </button>
               <div className="password-requirement">
-
-              <ul>Password Requirement
-                <li>Minimum of 8 Characters</li>
-                <li>At least 1 uppercase letter</li>
-                <li>At least 1 lowercase letter</li>
-                <li>At least 1 special Character</li>
-              </ul>
+                <ul>
+                  Password Requirement
+                  <li>Minimum of 8 Characters</li>
+                  <li>At least 1 uppercase letter</li>
+                  <li>At least 1 lowercase letter</li>
+                  <li>At least 1 special Character</li>
+                </ul>
               </div>
             </form>
             <div className="col m2 s12"></div>
-            {/* <LoginForm /> */}
             <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
                 “To me, photography is an art of observation. It’s about finding

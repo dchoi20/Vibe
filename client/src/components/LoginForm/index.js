@@ -12,14 +12,8 @@ export default function LoginForm() {
       password: passwordInput.current.value,
     };
 
-    console.log(emailInput);
-    console.log(passwordInput);
     axios.post("users/login", user).then((res) => {
-      console.log(res);
-      console.log(res.data);
-      console.log(res.data.token);
       localStorage.token = res.data.token;
-      console.log(user);
 
       window.location.replace(`/home`);
     });
@@ -39,7 +33,9 @@ export default function LoginForm() {
           <div className=" row">
             <div className="col m5 s12 formPosition center-align signupText blue-text darken-1">
               <blockquote>
-              “Only photography has been able to divide human life into a series of moments, each of them has the value of a complete existence.”
+                “Only photography has been able to divide human life into a
+                series of moments, each of them has the value of a complete
+                existence.”
                 <br /> <cite className="center-align">Eadweard Muybridge</cite>
               </blockquote>
             </div>
