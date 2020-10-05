@@ -74,10 +74,13 @@ export default function SideNav() {
         </li>
 
         <div className="divider"></div>
-        <h6 className="center-align">Check out other users!</h6>
-        <ul>
+
+        <li>
+          <h6 className="center-align">Check out other users</h6>
+        </li>
+        <li>
           <People />
-        </ul>
+        </li>
       </ul>
     </div>
   );
