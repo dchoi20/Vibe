@@ -1,6 +1,6 @@
 # Vibe
+![vibe](https://user-images.githubusercontent.com/68072287/95093407-5d2ac800-06ee-11eb-90b3-83b02e416799.gif)
 
-![IntroGif](./assets/Vibe.gif)
 
 ## Description
 
