@@ -15,13 +15,9 @@ function FavoriteRender(props) {
           <div className="col m8">
             {props.userFavorite.collection.map((image) => {
               return (
-                <div className="card favoritesCard">
+                <div className="card favoritesCard" key={image._id}>
                   <div className="card-image">
-                    <img
-                      src={image.favImageURL}
-                      alt={image._id}
-                      key={image._id}
-                    />
+                    <img src={image.favImageURL} alt={image._id} />
                   </div>
                 </div>
               );

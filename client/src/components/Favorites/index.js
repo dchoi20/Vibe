@@ -8,7 +8,6 @@ export default function Favorites() {
     collection: [],
   });
 
-  let key = 0;
   const config = {
     headers: {
       Authorization: localStorage.token,

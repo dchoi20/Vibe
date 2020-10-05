@@ -13,7 +13,7 @@ export default function Navbar() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo center">
+          <a href="/home" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
           </a>
