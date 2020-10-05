@@ -8,7 +8,6 @@ export default function Favorites() {
     collection: [],
   });
 
-  let key = 0;
   const config = {
     headers: {
       Authorization: localStorage.token,
@@ -19,7 +18,6 @@ export default function Favorites() {
     axios
       .get("/users/favorite/", config)
       .then((res) => {
-        // console.log(res.data);
         setUserFavorite({
           ...userFavorite,
           collection: res.data,
@@ -33,6 +31,5 @@ export default function Favorites() {
     <div>
       <FavoriteRender userFavorite={userFavorite} />
     </div>
-    
   );
 }

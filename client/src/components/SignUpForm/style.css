@@ -1,7 +1,7 @@
 form {
   max-width: 60%;
 }
-.signupText {
+.signupText .password-requirement {
   font-family: "Roboto Mono", monospace;
 }
 .formz {

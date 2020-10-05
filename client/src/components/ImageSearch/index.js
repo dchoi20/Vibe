@@ -21,7 +21,6 @@ export default function ImageSearch() {
     let query = e.target.search.value;
 
     API.searchImages(query).then((res) => {
-      // console.log(res.data);
       setSearchImagesState({
         ...searchImagesState,
         searchImages: res.data.results,
@@ -37,14 +36,10 @@ export default function ImageSearch() {
   function likeImage(e, image, i) {
     // Save to database
     const favorite = image.cover_photo.urls.regular;
-    console.log(favorite);
-    console.log(image.cover_photo.urls.regular);
 
     axios
       .post("/users/favorite/", { favImageURL: favorite }, config)
       .then((res) => {
-        console.log(res);
-        console.log(favorite);
         setSearchImagesState({
           ...searchImagesState,
           searchImages: searchImagesState.searchImages.map((image, j) => {

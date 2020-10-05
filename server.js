@@ -1,10 +1,10 @@
 const express = require("express");
 const Axios = require("axios");
 const userRouter = require("./routers/user");
+const path = require("path");
 
 const PORT = process.env.PORT || 3001;
 
-// const routes = require("./routes");
 require("dotenv").config();
 require("./db/db");
 
@@ -21,7 +21,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(routes);
 
 app.get("/images", (req, res) => {
   Axios.get(
@@ -37,6 +36,10 @@ app.get("/searchimages/:query", (req, res) => {
   ).then(({ data }) => {
     res.send(data);
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 // Start the API server
