@@ -13,7 +13,7 @@ export default function Navbar() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <a href="/home" className="brand-logo center">
+          <a href="/" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
           </a>
@@ -38,8 +38,8 @@ export default function Navbar() {
           </li>
           <li className="divider" tabIndex="-1"></li>
           <li>
-            <a className="blue-text" href="#!">
-              About
+            <a className="blue-text" href="/">
+              Get Started
             </a>
           </li>
         </ul>
