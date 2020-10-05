@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import People from "../People";
 import Logo from "../assets/Vibe_Logo_White.png";
@@ -20,14 +19,14 @@ export default function SideNav() {
     <div>
       <nav className="black">
         <div className="nav-wrapper">
-          <Link to="/home" className="brand-logo center">
+          <a href="/home" className="brand-logo center">
             <img className="Logo" alt="VIBE" src={Logo} />
             <img className="Logo" alt="VIBE" src={AltLogo} />
-          </Link>
+          </a>
 
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <Link
+              <a
                 onClick={(event) => {
                   logOut(event);
                 }}
@@ -35,53 +34,52 @@ export default function SideNav() {
                 name="action"
               >
                 Logout
-              </Link>
+              </a>
             </li>
           </ul>
 
-          <Link
-            to="#"
+          <a
+            href="#"
             data-target="slide-out"
             className=" left sidenav-trigger show-on-large"
           >
             <i className="material-icons">menu</i>
-          </Link>
+          </a>
         </div>
       </nav>
       <ul id="slide-out" className="sidenav">
         <li>
           <div className="user-view">
-            <Link to="/home" className="center-align">
+            <a href="/home" className="center-align">
               <img className="circle" src={SideNavLogo} />
-            </Link>
+            </a>
           </div>
         </li>
         <li>
-          <Link to="/favorites">
+          <a href="/favorites">
             <h4>Welcome</h4>
-          </Link>
+          </a>
         </li>
         <li>
           <div className="divider"></div>
         </li>
         <li>
-          <Link to="/favorites">My Collection</Link>
+          <a href="/favorites">My Collection</a>
         </li>
         <li>
-          <Link to="/feature"> Daily Featured Images</Link>
+          <a href="/feature"> Daily Featured Images</a>
         </li>
         <li>
-          <Link to="/home">Search Images</Link>
+          <a href="/home">Search Images</a>
         </li>
 
         <div className="divider"></div>
 
-        <li>
-          <h6 className="center-align">Explore Other Users</h6>
-        </li>
-        <li>
+        <h6 className="center-align">Check out other users</h6>
+
+        <ul>
           <People />
-        </li>
+        </ul>
       </ul>
     </div>
   );
